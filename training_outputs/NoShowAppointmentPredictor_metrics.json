@@ -1,0 +1,36 @@
+{
+  "model": "NoShowAppointmentPredictor",
+  "auc": 0.9844908809523809,
+  "best_threshold": 0.5,
+  "report": {
+    "0": {
+      "precision": 0.9625960226864815,
+      "recall": 0.9577142857142857,
+      "f1-score": 0.9601489491209854,
+      "support": 14000.0
+    },
+    "1": {
+      "precision": 0.9024872343930159,
+      "recall": 0.9131666666666667,
+      "f1-score": 0.9077955430370309,
+      "support": 6000.0
+    },
+    "accuracy": 0.94435,
+    "macro avg": {
+      "precision": 0.9325416285397488,
+      "recall": 0.9354404761904762,
+      "f1-score": 0.9339722460790081,
+      "support": 20000.0
+    },
+    "weighted avg": {
+      "precision": 0.9445633861984417,
+      "recall": 0.94435,
+      "f1-score": 0.944442927295799,
+      "support": 20000.0
+    }
+  },
+  "best_params": {
+    "clf__n_estimators": 400,
+    "clf__max_depth": 10
+  }
+}

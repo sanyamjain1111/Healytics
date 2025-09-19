@@ -1,0 +1,36 @@
+{
+  "model": "HeartFailure30DRisk",
+  "auc": 0.9813170357142855,
+  "best_threshold": 0.4,
+  "report": {
+    "0": {
+      "precision": 0.9681983953318746,
+      "recall": 0.9481428571428572,
+      "f1-score": 0.958065680259834,
+      "support": 14000.0
+    },
+    "1": {
+      "precision": 0.8845786963434022,
+      "recall": 0.9273333333333333,
+      "f1-score": 0.9054515866558177,
+      "support": 6000.0
+    },
+    "accuracy": 0.9419,
+    "macro avg": {
+      "precision": 0.9263885458376384,
+      "recall": 0.9377380952380953,
+      "f1-score": 0.9317586334578258,
+      "support": 20000.0
+    },
+    "weighted avg": {
+      "precision": 0.9431124856353328,
+      "recall": 0.9419,
+      "f1-score": 0.9422814521786291,
+      "support": 20000.0
+    }
+  },
+  "best_params": {
+    "clf__n_estimators": 300,
+    "clf__max_depth": 4
+  }
+}

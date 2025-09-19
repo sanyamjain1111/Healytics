@@ -1,0 +1,5221 @@
+{
+  "method": "zscore+iqr",
+  "patients": [
+    {
+      "patient_id": "900013",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900016",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900026",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900027",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900029",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900032",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900044",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900046",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900049",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900062",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900066",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900071",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900077",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900085",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900098",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900103",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900123",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900129",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900130",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900138",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900141",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900164",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900167",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900168",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900170",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900174",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900177",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900179",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900187",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900197",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900200",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900201",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900215",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900217",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900227",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900242",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900264",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900274",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900278",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900285",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900286",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900296",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900310",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900317",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900318",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900322",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900326",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900327",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900335",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900348",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900353",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900354",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900370",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900372",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900376",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900378",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900380",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900397",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900401",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900403",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900404",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900408",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900415",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900424",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900426",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900429",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900434",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900436",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900439",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900449",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900451",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900452",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900458",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900462",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900465",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900469",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900470",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900479",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900481",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900493",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900494",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900497",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900512",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900519",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900533",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900538",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900577",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900584",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900600",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900605",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900622",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900630",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900635",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900642",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900644",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900661",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900664",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900665",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900667",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900669",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900677",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900686",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900690",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900704",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900728",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900732",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900747",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900756",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900770",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900781",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900782",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900798",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900800",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900807",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900809",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900813",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900818",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900826",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900829",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900836",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900843",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900847",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900867",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900879",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900885",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900890",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900897",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900902",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900905",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900911",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900914",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900918",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900919",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900924",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900932",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900940",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900950",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900976",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900986",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900988",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900999",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901011",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901013",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901020",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901022",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901025",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901026",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901028",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901052",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901075",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901077",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901078",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901080",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901086",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901103",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901104",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901105",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901109",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901112",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901114",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901131",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901136",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901143",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901145",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901150",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901157",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901160",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901166",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901184",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901193",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901213",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901219",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901229",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901243",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901244",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901247",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901258",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901284",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901290",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901295",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901303",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901305",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901307",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901313",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901314",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901338",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901340",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901341",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901350",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901352",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901361",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901363",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901364",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901371",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901376",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901377",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901379",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901380",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901381",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901388",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901393",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901396",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901409",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901415",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901425",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901426",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901445",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901446",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901447",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901452",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901457",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901465",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901501",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901511",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901512",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901524",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901544",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901546",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901548",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901555",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901559",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901572",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901576",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901587",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901607",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901619",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901629",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901633",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901651",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901660",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901665",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901677",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901682",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901690",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901694",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901696",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901700",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901706",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901717",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901724",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901734",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901740",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901754",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901760",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901762",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901778",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901784",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901813",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901819",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901825",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901828",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901830",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901864",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901865",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901866",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901872",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901885",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901894",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901902",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901903",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901912",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901924",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901931",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901940",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901941",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901942",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901945",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901965",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901968",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901971",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901977",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901995",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901998",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902002",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902003",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902023",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902040",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902055",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902058",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902073",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902082",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902088",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902118",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902121",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902124",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902143",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902148",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902151",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902153",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902154",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902168",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902170",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902172",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902181",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902191",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902199",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902214",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902216",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902220",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902221",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902222",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902224",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902225",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902233",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902250",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902291",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902306",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902308",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902309",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902316",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902319",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902328",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902332",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902337",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902341",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902354",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902356",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902357",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902367",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902373",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902377",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902387",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902389",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902404",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902408",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902411",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902425",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902453",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902462",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902473",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902474",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902476",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902477",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902489",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902505",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902509",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902515",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902519",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902524",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902525",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902542",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902547",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902550",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902557",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902565",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902567",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902574",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902580",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902582",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902591",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902600",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902602",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902603",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902611",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902612",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902629",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902632",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902634",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902637",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902645",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902650",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902656",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902664",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902674",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902675",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902677",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902680",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902689",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902694",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902696",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902703",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902724",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902726",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902730",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902751",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902777",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902781",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902784",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902786",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902790",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902807",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902809",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902831",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902836",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902841",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902843",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902862",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902875",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902877",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902886",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902889",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902891",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902896",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902904",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902930",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902939",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902944",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902952",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902955",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902963",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902972",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902984",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902994",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902998",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903001",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903005",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903013",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903014",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903028",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903030",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903037",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903049",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903061",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903072",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903079",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903086",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903091",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903098",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903101",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903124",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903128",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903146",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903147",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903151",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903159",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903171",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903188",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903189",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903196",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903220",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903228",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903253",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903255",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903263",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903267",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903277",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903279",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903296",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903298",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903315",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903318",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903320",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903331",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903333",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903335",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903336",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903358",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903372",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903380",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903382",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903417",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903421",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903428",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903436",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903440",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903447",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903465",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903476",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903479",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903483",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903485",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903495",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903499",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903504",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903507",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903508",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903519",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903523",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903527",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903529",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903546",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903548",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903558",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903560",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903565",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903603",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903610",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903619",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903633",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903637",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903643",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903657",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903662",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903664",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903681",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903682",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903684",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903686",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903689",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903691",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903696",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903698",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903712",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903713",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903714",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903735",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903738",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903748",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903755",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903758",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903785",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903794",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903799",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903800",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903820",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903823",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903833",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903841",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903849",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903855",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903858",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903863",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903872",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903886",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903889",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903894",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903904",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903906",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903911",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903935",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903947",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903957",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903970",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903982",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903986",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903988",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904000",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904014",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904043",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904048",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904065",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904089",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904092",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904116",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904119",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904123",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904125",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904129",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904130",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904131",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904134",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904141",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904147",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904177",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904185",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904189",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904190",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904192",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904197",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904199",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904212",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904224",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904236",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904237",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904239",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904243",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904245",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904247",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904250",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904260",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904262",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904275",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904285",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904287",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904289",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904292",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904293",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904294",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904295",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904296",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904300",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904305",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904343",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904346",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904354",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904363",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904382",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904394",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904396",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904423",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904426",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904431",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904444",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904447",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904449",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904478",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904488",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904492",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904503",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904539",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904546",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904547",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904554",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904555",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904558",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904579",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904584",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904589",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904591",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904608",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904609",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904630",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904631",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904636",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904638",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904639",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904640",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904641",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904651",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904666",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904667",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904677",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904684",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904685",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904688",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904692",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904695",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904699",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904708",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904718",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904719",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904728",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904729",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904733",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904736",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904741",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904761",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904776",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904777",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904783",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904796",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904801",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904805",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904810",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904831",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904839",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904842",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904857",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904862",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904863",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904872",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904873",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904899",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904911",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904918",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904947",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904949",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904953",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904960",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904979",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904983",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900013",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900016",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900026",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900027",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900029",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900032",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900044",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900046",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900049",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900062",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900066",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900071",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900077",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900085",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900098",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900103",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900123",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900129",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900130",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900138",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900141",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900164",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900167",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900168",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900170",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900174",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900177",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900179",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900187",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900197",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900200",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900201",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900215",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900217",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900227",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900242",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900264",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900274",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900278",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900285",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900286",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900296",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900310",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900317",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900318",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900322",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900326",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900327",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900335",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900348",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900353",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900354",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900370",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900372",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900376",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900378",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900380",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900397",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900401",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900403",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900404",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900408",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900415",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900424",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900426",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900429",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900434",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900436",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900439",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900449",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900451",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900452",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900458",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900462",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900465",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900469",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900470",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900479",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900481",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900493",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900494",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900497",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900512",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900519",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900533",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900538",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900577",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900584",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900600",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900605",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900622",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900630",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900635",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900642",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900644",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900661",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900664",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900665",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900667",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900669",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900677",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900686",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900690",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900704",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900728",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900732",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900747",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900756",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900770",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900781",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900782",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900798",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900800",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900807",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900809",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900813",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900818",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900826",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900829",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900836",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900843",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900847",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900867",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900879",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900885",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900890",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900897",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900902",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900905",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900911",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900914",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900918",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900919",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900924",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900932",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900940",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900950",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900976",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "900986",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900988",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "900999",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901011",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901013",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901020",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901022",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901025",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901026",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901028",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901052",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901075",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901077",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901078",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901080",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901086",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901103",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901104",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901105",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901109",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901112",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901114",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901131",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901136",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901143",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901145",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901150",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901157",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901160",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901166",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901184",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901193",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901213",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901219",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901229",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901243",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901244",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901247",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901258",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901284",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901290",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901295",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901303",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901305",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901307",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901313",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901314",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901338",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901340",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901341",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901350",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901352",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901361",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901363",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901364",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901371",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901376",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901377",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901379",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901380",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901381",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901388",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901393",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901396",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901409",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901415",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901425",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901426",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901445",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901446",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901447",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901452",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901457",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901465",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901501",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901511",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901512",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901524",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901544",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901546",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901548",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901555",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901559",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901572",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901576",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901587",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901607",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901619",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901629",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901633",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901651",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901660",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901665",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901677",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901682",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901690",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901694",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901696",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901700",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901706",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901717",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901724",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901734",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901740",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901754",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901760",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901762",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901778",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901784",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901813",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901819",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901825",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901828",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901830",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901864",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901865",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901866",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901872",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901885",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901894",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901902",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901903",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901912",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901924",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901931",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901940",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901941",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901942",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901945",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901965",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901968",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901971",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901977",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "901995",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "901998",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902002",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902003",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902023",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902040",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902055",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902058",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902073",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902082",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902088",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902118",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902121",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902124",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902143",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902148",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902151",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902153",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902154",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902168",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902170",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902172",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902181",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902191",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902199",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902214",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902216",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902220",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902221",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902222",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902224",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902225",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902233",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902250",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902291",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902306",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902308",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902309",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902316",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902319",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902328",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902332",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902337",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902341",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902354",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902356",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902357",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902367",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902373",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902377",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902387",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902389",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902404",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902408",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902411",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902425",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902453",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902462",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902473",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902474",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902476",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902477",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902489",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902505",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902509",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902515",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902519",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902524",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902525",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902542",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902547",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902550",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902557",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902565",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902567",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902574",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902580",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902582",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902591",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902600",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902602",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902603",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902611",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902612",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902629",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902632",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902634",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902637",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902645",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902650",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902656",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902664",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902674",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902675",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902677",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902680",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902689",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902694",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902696",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902703",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902724",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902726",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902730",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902751",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902777",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902781",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902784",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902786",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902790",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902807",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902809",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902831",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902836",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902841",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902843",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902862",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902875",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902877",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902886",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902889",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902891",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902896",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902904",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902930",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902939",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902944",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902952",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902955",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902963",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902972",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "902984",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902994",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "902998",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903001",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903005",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903013",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903014",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903028",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903030",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903037",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903049",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903061",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903072",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903079",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903086",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903091",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903098",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903101",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903124",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903128",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903146",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903147",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903151",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903159",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903171",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903188",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903189",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903196",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903220",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903228",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903253",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903255",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903263",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903267",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903277",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903279",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903296",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903298",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903315",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903318",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903320",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903331",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903333",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903335",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903336",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903358",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903372",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903380",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903382",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903417",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903421",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903428",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903436",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903440",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903447",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903465",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903476",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903479",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903483",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903485",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903495",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903499",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903504",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903507",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903508",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903519",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903523",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903527",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903529",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903546",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903548",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903558",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903560",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903565",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903603",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903610",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903619",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903633",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903637",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903643",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903657",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903662",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903664",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903681",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903682",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903684",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903686",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903689",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903691",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903696",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903698",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903712",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903713",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903714",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903735",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903738",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903748",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903755",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903758",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903785",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903794",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903799",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903800",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903820",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903823",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903833",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903841",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903849",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903855",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903858",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903863",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903872",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903886",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903889",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903894",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903904",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903906",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903911",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903935",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903947",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903957",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903970",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "903982",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903986",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "903988",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904000",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904014",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904043",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904048",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904065",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904089",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904092",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904116",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904119",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904123",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904125",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904129",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904130",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904131",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904134",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904141",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904147",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904177",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904185",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904189",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904190",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904192",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904197",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904199",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904212",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904224",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904236",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904237",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904239",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904243",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904245",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904247",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904250",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904260",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904262",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904275",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904285",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904287",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904289",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904292",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904293",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904294",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904295",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904296",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904300",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904305",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904343",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904346",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904354",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904363",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904382",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904394",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904396",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904423",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904426",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904431",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904444",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904447",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904449",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904478",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904488",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904492",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904503",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904539",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904546",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904547",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904554",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904555",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904558",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904579",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904584",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904589",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904591",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904608",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904609",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904630",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904631",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904636",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904638",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904639",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904640",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904641",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904651",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904666",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904667",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904677",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904684",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904685",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904688",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904692",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904695",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904699",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904708",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904718",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904719",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904728",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904729",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904733",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904736",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904741",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904761",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904776",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904777",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904783",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904796",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904801",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904805",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904810",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904831",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904839",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904842",
+      "zscore_any_gt3": true
+    },
+    {
+      "patient_id": "904857",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904862",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904863",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904872",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904873",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904899",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904911",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904918",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904947",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904949",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904953",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904960",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904979",
+      "zscore_any_gt3": false
+    },
+    {
+      "patient_id": "904983",
+      "zscore_any_gt3": false
+    }
+  ],
+  "summary": {
+    "n_flagged": 1302,
+    "n_total": 10000,
+    "method_components": [
+      "zscore>3",
+      "iqr_1.5"
+    ]
+  }
+}

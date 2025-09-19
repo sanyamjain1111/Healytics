@@ -1,0 +1,36 @@
+{
+  "model": "HypertensionControlPredictor",
+  "auc": 0.9845379285714285,
+  "best_threshold": 0.5,
+  "report": {
+    "0": {
+      "precision": 0.9605310369573018,
+      "recall": 0.9560714285714286,
+      "f1-score": 0.9582960443887596,
+      "support": 14000.0
+    },
+    "1": {
+      "precision": 0.8985985160758451,
+      "recall": 0.9083333333333333,
+      "f1-score": 0.9034397016162453,
+      "support": 6000.0
+    },
+    "accuracy": 0.94175,
+    "macro avg": {
+      "precision": 0.9295647765165734,
+      "recall": 0.932202380952381,
+      "f1-score": 0.9308678730025024,
+      "support": 20000.0
+    },
+    "weighted avg": {
+      "precision": 0.9419512806928647,
+      "recall": 0.94175,
+      "f1-score": 0.9418391415570053,
+      "support": 20000.0
+    }
+  },
+  "best_params": {
+    "clf__n_estimators": 400,
+    "clf__max_depth": 10
+  }
+}

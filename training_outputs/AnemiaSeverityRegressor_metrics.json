@@ -1,0 +1,9 @@
+{
+  "model": "AnemiaSeverityRegressor",
+  "mae": 0.39955375914950636,
+  "r2": 0.9259100630768353,
+  "best_params": {
+    "reg__n_estimators": 400,
+    "reg__max_depth": 10
+  }
+}

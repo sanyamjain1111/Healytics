@@ -1,0 +1,36 @@
+{
+  "model": "StrokeRiskPredictor",
+  "auc": 0.9798613333333334,
+  "best_threshold": 0.45000000000000007,
+  "report": {
+    "0": {
+      "precision": 0.9628021421334492,
+      "recall": 0.9502857142857143,
+      "f1-score": 0.9565029836796319,
+      "support": 14000.0
+    },
+    "1": {
+      "precision": 0.8874150760271756,
+      "recall": 0.9143333333333333,
+      "f1-score": 0.9006731242817272,
+      "support": 6000.0
+    },
+    "accuracy": 0.9395,
+    "macro avg": {
+      "precision": 0.9251086090803124,
+      "recall": 0.9323095238095238,
+      "f1-score": 0.9285880539806796,
+      "support": 20000.0
+    },
+    "weighted avg": {
+      "precision": 0.9401860223015672,
+      "recall": 0.9395,
+      "f1-score": 0.9397540258602605,
+      "support": 20000.0
+    }
+  },
+  "best_params": {
+    "clf__n_estimators": 300,
+    "clf__max_depth": 4
+  }
+}

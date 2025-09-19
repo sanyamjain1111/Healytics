@@ -1,0 +1,59 @@
+{
+  "summary": {
+    "dataset_id": 7,
+    "strategy_id": 9,
+    "risk_overview": {
+      "dataset_id": 7,
+      "strategy_id": 9,
+      "selected_models": [
+        "DiabetesComplicationRisk",
+        "HypertensionControlPredictor",
+        "HeartFailure30DRisk",
+        "StrokeRiskPredictor",
+        "COPDExacerbationPredictor",
+        "AnemiaSeverityRegressor",
+        "SepsisEarlyWarning",
+        "ICUAdmissionPredictor"
+      ],
+      "counts": {
+        "DiabetesComplicationRisk": {
+          "positives": 21050,
+          "total": 24000
+        },
+        "HypertensionControlPredictor": {
+          "positives": 17286,
+          "total": 24000
+        },
+        "HeartFailure30DRisk": {
+          "positives": 21050,
+          "total": 24000
+        },
+        "StrokeRiskPredictor": {
+          "positives": 19434,
+          "total": 24000
+        },
+        "COPDExacerbationPredictor": {
+          "positives": 17286,
+          "total": 24000
+        },
+        "AnemiaSeverityRegressor": {
+          "positives": 17286,
+          "total": 24000
+        },
+        "SepsisEarlyWarning": {
+          "positives": 22328,
+          "total": 24000
+        },
+        "ICUAdmissionPredictor": {
+          "positives": 17286,
+          "total": 24000
+        }
+      }
+    },
+    "anomaly_overview": {
+      "dataset_id": 7,
+      "n_anomalies": 2308,
+      "total": 24000
+    }
+  },
+  "insights": 

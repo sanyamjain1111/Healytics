@@ -1,0 +1,214 @@
+{
+  "datasets": {
+    "greenvalley_teaching_hospital_2024": {
+      "id": "greenvalley_teaching_hospital_2024",
+      "name": "GreenValley_Teaching_Hospital_2024",
+      "path": "D:\\Downloads\\medical-intellianalytics-pro-v3\\medical-intellianalytics-pro\\data\\uploads\\GreenValley_Teaching_Hospital_2024.csv",
+      "created_at": "2025-09-19T19:49:22.986662Z",
+      "rows": 25000,
+      "cols": 50,
+      "columns": [
+        {
+          "name": "patient_id",
+          "dtype": "int64"
+        },
+        {
+          "name": "source_hospital",
+          "dtype": "object"
+        },
+        {
+          "name": "facility_id",
+          "dtype": "object"
+        },
+        {
+          "name": "region",
+          "dtype": "object"
+        },
+        {
+          "name": "year",
+          "dtype": "int64"
+        },
+        {
+          "name": "age",
+          "dtype": "int64"
+        },
+        {
+          "name": "sex",
+          "dtype": "object"
+        },
+        {
+          "name": "bmi",
+          "dtype": "float64"
+        },
+        {
+          "name": "systolic_bp",
+          "dtype": "int64"
+        },
+        {
+          "name": "diastolic_bp",
+          "dtype": "int64"
+        },
+        {
+          "name": "heart_rate",
+          "dtype": "int64"
+        },
+        {
+          "name": "resp_rate",
+          "dtype": "int64"
+        },
+        {
+          "name": "temperature_c",
+          "dtype": "float64"
+        },
+        {
+          "name": "spo2",
+          "dtype": "int64"
+        },
+        {
+          "name": "glucose",
+          "dtype": "int64"
+        },
+        {
+          "name": "hba1c",
+          "dtype": "float64"
+        },
+        {
+          "name": "creatinine",
+          "dtype": "float64"
+        },
+        {
+          "name": "egfr",
+          "dtype": "int64"
+        },
+        {
+          "name": "hemoglobin",
+          "dtype": "float64"
+        },
+        {
+          "name": "wbc",
+          "dtype": "float64"
+        },
+        {
+          "name": "platelets",
+          "dtype": "int64"
+        },
+        {
+          "name": "cholesterol_total",
+          "dtype": "float64"
+        },
+        {
+          "name": "ldl",
+          "dtype": "float64"
+        },
+        {
+          "name": "hdl",
+          "dtype": "float64"
+        },
+        {
+          "name": "triglycerides",
+          "dtype": "float64"
+        },
+        {
+          "name": "smoker",
+          "dtype": "int64"
+        },
+        {
+          "name": "alcohol_use",
+          "dtype": "int64"
+        },
+        {
+          "name": "hypertension",
+          "dtype": "int64"
+        },
+        {
+          "name": "diabetes",
+          "dtype": "int64"
+        },
+        {
+          "name": "heart_failure",
+          "dtype": "int64"
+        },
+        {
+          "name": "copd",
+          "dtype": "int64"
+        },
+        {
+          "name": "ckd",
+          "dtype": "int64"
+        },
+        {
+          "name": "liver_disease",
+          "dtype": "int64"
+        },
+        {
+          "name": "admission_type",
+          "dtype": "object"
+        },
+        {
+          "name": "sepsis_label",
+          "dtype": "int64"
+        },
+        {
+          "name": "mortality_30d",
+          "dtype": "int64"
+        },
+        {
+          "name": "icu_admit",
+          "dtype": "int64"
+        },
+        {
+          "name": "readmission_30d",
+          "dtype": "int64"
+        },
+        {
+          "name": "readmission_90d",
+          "dtype": "int64"
+        },
+        {
+          "name": "diabetes_complication",
+          "dtype": "int64"
+        },
+        {
+          "name": "hypertension_uncontrolled",
+          "dtype": "int64"
+        },
+        {
+          "name": "heart_failure_30d",
+          "dtype": "int64"
+        },
+        {
+          "name": "stroke_label",
+          "dtype": "int64"
+        },
+        {
+          "name": "copd_exacerbation",
+          "dtype": "int64"
+        },
+        {
+          "name": "aki_label",
+          "dtype": "int64"
+        },
+        {
+          "name": "adverse_drug_event",
+          "dtype": "int64"
+        },
+        {
+          "name": "no_show_appointment",
+          "dtype": "int64"
+        },
+        {
+          "name": "length_of_stay",
+          "dtype": "float64"
+        },
+        {
+          "name": "cost_of_care",
+          "dtype": "float64"
+        },
+        {
+          "name": "anemia_severity",
+          "dtype": "float64"
+        }
+      ]
+    }
+  }
+}

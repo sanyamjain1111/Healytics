@@ -1,0 +1,9 @@
+{
+  "model": "LengthOfStayRegressor",
+  "mae": 0.785711684133364,
+  "r2": 0.6351403998683729,
+  "best_params": {
+    "reg__n_estimators": 400,
+    "reg__max_depth": 10
+  }
+}

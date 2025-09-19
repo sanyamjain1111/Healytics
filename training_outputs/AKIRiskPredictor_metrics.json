@@ -1,0 +1,36 @@
+{
+  "model": "AKIRiskPredictor",
+  "auc": 0.9815349880952381,
+  "best_threshold": 0.35,
+  "report": {
+    "0": {
+      "precision": 0.9701045245230612,
+      "recall": 0.948,
+      "f1-score": 0.9589248943318521,
+      "support": 14000.0
+    },
+    "1": {
+      "precision": 0.8847918974521285,
+      "recall": 0.9318333333333333,
+      "f1-score": 0.9077035473658576,
+      "support": 6000.0
+    },
+    "accuracy": 0.94315,
+    "macro avg": {
+      "precision": 0.9274482109875948,
+      "recall": 0.9399166666666666,
+      "f1-score": 0.9333142208488548,
+      "support": 20000.0
+    },
+    "weighted avg": {
+      "precision": 0.9445107364017815,
+      "recall": 0.94315,
+      "f1-score": 0.9435584902420538,
+      "support": 20000.0
+    }
+  },
+  "best_params": {
+    "clf__n_estimators": 300,
+    "clf__max_depth": 4
+  }
+}
