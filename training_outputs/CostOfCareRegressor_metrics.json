@@ -1,0 +1,8 @@
+{
+  "mae": 409.1319040090406,
+  "r2": 0.7233739663583854,
+  "best_params": {
+    "reg__n_estimators": 300,
+    "reg__max_depth": 4
+  }
+}

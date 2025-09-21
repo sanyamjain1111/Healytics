@@ -1,0 +1,7 @@
+python -m training_data.model_training_scripts.train_all_models_full
+
+$body = @{ dataset_id = 9; strategy_id =14 } | ConvertTo-Json
+Invoke-RestMethod -Method Post -Uri "http://127.0.0.1:8000/analytics/run" -ContentType "application/json" -Body $body
+
+$body = @{ dataset_id = 9 } | ConvertTo-Json
+Invoke-RestMethod -Method Post -Uri "http://127.0.0.1:8000/reports/generate" -ContentType "application/json" -Body $body

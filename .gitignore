@@ -1,0 +1,15 @@
+
+__pycache__/
+.env
+venv/
+.pytest_cache/
+node_modules/
+dist/
+build/
+.DS_Store
+*.sqlite3
+*.log
+*.ipynb_checkpoints
+*.egg-info
+*.pkl
+*.joblib

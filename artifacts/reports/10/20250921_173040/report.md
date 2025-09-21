@@ -1,0 +1,1854 @@
+# Clinical Analysis Report – Dataset 10
+_Generated: 20250921_173040_
+
+## Overview
+- **Strategy ID**: None
+- **Risk JSON**: `artifacts/analysis/10/20250921_171810/risk_prediction.json`
+- **Anomaly JSON**: `artifacts/analysis/10/20250921_171810/anomaly_detection.json`
+
+## Executive Summary
+No models were run, therefore no insights or recommendations can be provided.
+
+## Narrative
+In dataset 10, the strongest risk signals came from: SepsisEarlyWarning (3308/10000), DiabetesComplicationRisk (3266/10000), HypertensionControlPredictor (3090/10000). Overall, 16334 positive predictions were generated across 16 configured model(s).
+
+20 patient(s) met high-risk criteria (≥2 positive model(s) or avg score ≥0.80). Examples include: 901708 (pos=9, avg=0.64), 901708 (pos=9, avg=0.64), 904478 (pos=8, avg=0.68), 904478 (pos=8, avg=0.68), 904446 (pos=8, avg=0.67). These patients should be prioritized for clinical review and potential intervention.
+
+Unsupervised anomaly detection highlighted 20 notable patient(s). Top outliers include: 904478 (score=0.116), 904478 (score=0.116), 904294 (score=0.090), 904294 (score=0.090), 902070 (score=0.085). Anomalies may reflect rare physiology, data quality issues, or emergent risk patterns.
+
+Recommended next steps: (1) review high-risk patients for confirmatory clinical signals; (2) adjust model thresholds if prevalence is misaligned; (3) audit outliers for data quality and clinical plausibility; (4) incorporate clinician feedback to refine the decision thresholds and follow-up workflows.
+
+## Model Snapshot
+```json
+[
+  {
+    "model": "SepsisEarlyWarning",
+    "positives": 3308,
+    "total": 10000,
+    "rate": 0.3308
+  },
+  {
+    "model": "DiabetesComplicationRisk",
+    "positives": 3266,
+    "total": 10000,
+    "rate": 0.3266
+  },
+  {
+    "model": "HypertensionControlPredictor",
+    "positives": 3090,
+    "total": 10000,
+    "rate": 0.309
+  },
+  {
+    "model": "AKIRiskPredictor",
+    "positives": 2480,
+    "total": 10000,
+    "rate": 0.248
+  },
+  {
+    "model": "ICUAdmissionPredictor",
+    "positives": 1466,
+    "total": 10000,
+    "rate": 0.1466
+  },
+  {
+    "model": "HeartFailure30DRisk",
+    "positives": 1310,
+    "total": 10000,
+    "rate": 0.131
+  },
+  {
+    "model": "MortalityRiskModel",
+    "positives": 1192,
+    "total": 10000,
+    "rate": 0.1192
+  },
+  {
+    "model": "StrokeRiskPredictor",
+    "positives": 204,
+    "total": 10000,
+    "rate": 0.0204
+  },
+  {
+    "model": "NoShowAppointmentPredictor",
+    "positives": 16,
+    "total": 10000,
+    "rate": 0.0016
+  },
+  {
+    "model": "AdverseDrugEventPredictor",
+    "positives": 2,
+    "total": 10000,
+    "rate": 0.0002
+  },
+  {
+    "model": "ReadmissionPredictor",
+    "positives": 0,
+    "total": 10000,
+    "rate": 0.0
+  },
+  {
+    "model": "Readmission90DPredictor",
+    "positives": 0,
+    "total": 10000,
+    "rate": 0.0
+  },
+  {
+    "model": "COPDExacerbationPredictor",
+    "positives": 0,
+    "total": 10000,
+    "rate": 0.0
+  },
+  {
+    "model": "LengthOfStayRegressor",
+    "positives": 0,
+    "total": 0,
+    "rate": 0.0
+  },
+  {
+    "model": "CostOfCareRegressor",
+    "positives": 0,
+    "total": 0,
+    "rate": 0.0
+  },
+  {
+    "model": "AnemiaSeverityRegressor",
+    "positives": 0,
+    "total": 0,
+    "rate": 0.0
+  }
+]
+```
+
+## High-risk Patients
+_Definition: ≥2 positive model(s) **or** avg score ≥0.80_
+```json
+[
+  {
+    "patient_id": "901708",
+    "positive_models": 9,
+    "avg_score": 0.6418,
+    "models": {
+      "ReadmissionPredictor": {
+        "score": 0.07110754077416699,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "Readmission90DPredictor": {
+        "score": 0.07110754077416698,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "MortalityRiskModel": {
+        "score": 0.7766645550727844,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "ICUAdmissionPredictor": {
+        "score": 0.9693441987037659,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "SepsisEarlyWarning": {
+        "score": 0.999885082244873,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "DiabetesComplicationRisk": {
+        "score": 0.9999401569366455,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "HypertensionControlPredictor": {
+        "score": 0.6107244791162627,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "HeartFailure30DRisk": {
+        "score": 0.9198001027107239,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "StrokeRiskPredictor": {
+        "score": 0.642964243888855,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "COPDExacerbationPredictor": {
+        "score": 0.33263426002358615,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "AKIRiskPredictor": {
+        "score": 0.9910001158714294,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "AdverseDrugEventPredictor": {
+        "score": 0.5095354668701565,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "NoShowAppointmentPredictor": {
+        "score": 0.4492151991442233,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "LengthOfStayRegressor": {
+        "prediction": 6.05094064387351
+      },
+      "CostOfCareRegressor": {
+        "prediction": 9080.5703125
+      },
+      "AnemiaSeverityRegressor": {
+        "prediction": 3.8578247840168274
+      }
+    }
+  },
+  {
+    "patient_id": "901708",
+    "positive_models": 9,
+    "avg_score": 0.6418,
+    "models": {
+      "ReadmissionPredictor": {
+        "score": 0.07110754077416699,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "Readmission90DPredictor": {
+        "score": 0.07110754077416698,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "MortalityRiskModel": {
+        "score": 0.7766645550727844,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "ICUAdmissionPredictor": {
+        "score": 0.9693441987037659,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "SepsisEarlyWarning": {
+        "score": 0.999885082244873,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "DiabetesComplicationRisk": {
+        "score": 0.9999401569366455,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "HypertensionControlPredictor": {
+        "score": 0.6107244791162627,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "HeartFailure30DRisk": {
+        "score": 0.9198001027107239,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "StrokeRiskPredictor": {
+        "score": 0.642964243888855,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "COPDExacerbationPredictor": {
+        "score": 0.33263426002358615,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "AKIRiskPredictor": {
+        "score": 0.9910001158714294,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "AdverseDrugEventPredictor": {
+        "score": 0.5095354668701565,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "NoShowAppointmentPredictor": {
+        "score": 0.4492151991442233,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "LengthOfStayRegressor": {
+        "prediction": 6.05094064387351
+      },
+      "CostOfCareRegressor": {
+        "prediction": 9080.5703125
+      },
+      "AnemiaSeverityRegressor": {
+        "prediction": 3.8578247840168274
+      }
+    }
+  },
+  {
+    "patient_id": "904478",
+    "positive_models": 8,
+    "avg_score": 0.6849,
+    "models": {
+      "ReadmissionPredictor": {
+        "score": 0.18177155331418227,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "Readmission90DPredictor": {
+        "score": 0.18177155331418227,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "MortalityRiskModel": {
+        "score": 0.9947220087051392,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "ICUAdmissionPredictor": {
+        "score": 0.993815541267395,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "SepsisEarlyWarning": {
+        "score": 0.9999966621398926,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "DiabetesComplicationRisk": {
+        "score": 0.9995554089546204,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "HypertensionControlPredictor": {
+        "score": 0.5646180858029523,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "HeartFailure30DRisk": {
+        "score": 0.9940592050552368,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "StrokeRiskPredictor": {
+        "score": 0.673149585723877,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "COPDExacerbationPredictor": {
+        "score": 0.351580296987609,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "AKIRiskPredictor": {
+        "score": 0.9997476935386658,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "AdverseDrugEventPredictor": {
+        "score": 0.49702471704355455,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "NoShowAppointmentPredictor": {
+        "score": 0.4718662922890904,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "LengthOfStayRegressor": {
+        "prediction": 7.312267638028551
+      },
+      "CostOfCareRegressor": {
+        "prediction": 9046.869140625
+      },
+      "AnemiaSeverityRegressor": {
+        "prediction": 8.360432012614808
+      }
+    }
+  },
+  {
+    "patient_id": "904478",
+    "positive_models": 8,
+    "avg_score": 0.6849,
+    "models": {
+      "ReadmissionPredictor": {
+        "score": 0.18177155331418227,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "Readmission90DPredictor": {
+        "score": 0.18177155331418227,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "MortalityRiskModel": {
+        "score": 0.9947220087051392,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "ICUAdmissionPredictor": {
+        "score": 0.993815541267395,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "SepsisEarlyWarning": {
+        "score": 0.9999966621398926,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "DiabetesComplicationRisk": {
+        "score": 0.9995554089546204,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "HypertensionControlPredictor": {
+        "score": 0.5646180858029523,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "HeartFailure30DRisk": {
+        "score": 0.9940592050552368,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "StrokeRiskPredictor": {
+        "score": 0.673149585723877,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "COPDExacerbationPredictor": {
+        "score": 0.351580296987609,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "AKIRiskPredictor": {
+        "score": 0.9997476935386658,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "AdverseDrugEventPredictor": {
+        "score": 0.49702471704355455,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "NoShowAppointmentPredictor": {
+        "score": 0.4718662922890904,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "LengthOfStayRegressor": {
+        "prediction": 7.312267638028551
+      },
+      "CostOfCareRegressor": {
+        "prediction": 9046.869140625
+      },
+      "AnemiaSeverityRegressor": {
+        "prediction": 8.360432012614808
+      }
+    }
+  },
+  {
+    "patient_id": "904446",
+    "positive_models": 8,
+    "avg_score": 0.6675,
+    "models": {
+      "ReadmissionPredictor": {
+        "score": 0.1345954583841836,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "Readmission90DPredictor": {
+        "score": 0.1345954583841836,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "MortalityRiskModel": {
+        "score": 0.9986661672592163,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "ICUAdmissionPredictor": {
+        "score": 0.9491785168647766,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "SepsisEarlyWarning": {
+        "score": 0.9995817542076111,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "DiabetesComplicationRisk": {
+        "score": 0.9999947547912598,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "HypertensionControlPredictor": {
+        "score": 0.620964118120278,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "HeartFailure30DRisk": {
+        "score": 0.9699953198432922,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "StrokeRiskPredictor": {
+        "score": 0.5755126476287842,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "COPDExacerbationPredictor": {
+        "score": 0.3508912746829509,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "AKIRiskPredictor": {
+        "score": 0.9975743889808655,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "AdverseDrugEventPredictor": {
+        "score": 0.4594364316921395,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "NoShowAppointmentPredictor": {
+        "score": 0.48671240310220654,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "LengthOfStayRegressor": {
+        "prediction": 7.12685855709309
+      },
+      "CostOfCareRegressor": {
+        "prediction": 8646.5732421875
+      },
+      "AnemiaSeverityRegressor": {
+        "prediction": 2.577721527366041
+      }
+    }
+  },
+  {
+    "patient_id": "904446",
+    "positive_models": 8,
+    "avg_score": 0.6675,
+    "models": {
+      "ReadmissionPredictor": {
+        "score": 0.1345954583841836,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "Readmission90DPredictor": {
+        "score": 0.1345954583841836,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "MortalityRiskModel": {
+        "score": 0.9986661672592163,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "ICUAdmissionPredictor": {
+        "score": 0.9491785168647766,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "SepsisEarlyWarning": {
+        "score": 0.9995817542076111,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "DiabetesComplicationRisk": {
+        "score": 0.9999947547912598,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "HypertensionControlPredictor": {
+        "score": 0.620964118120278,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "HeartFailure30DRisk": {
+        "score": 0.9699953198432922,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "StrokeRiskPredictor": {
+        "score": 0.5755126476287842,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "COPDExacerbationPredictor": {
+        "score": 0.3508912746829509,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "AKIRiskPredictor": {
+        "score": 0.9975743889808655,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "AdverseDrugEventPredictor": {
+        "score": 0.4594364316921395,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "NoShowAppointmentPredictor": {
+        "score": 0.48671240310220654,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "LengthOfStayRegressor": {
+        "prediction": 7.12685855709309
+      },
+      "CostOfCareRegressor": {
+        "prediction": 8646.5732421875
+      },
+      "AnemiaSeverityRegressor": {
+        "prediction": 2.577721527366041
+      }
+    }
+  },
+  {
+    "patient_id": "902614",
+    "positive_models": 8,
+    "avg_score": 0.6672,
+    "models": {
+      "ReadmissionPredictor": {
+        "score": 0.08679810694397942,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "Readmission90DPredictor": {
+        "score": 0.08679810694397942,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "MortalityRiskModel": {
+        "score": 0.9872848391532898,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "ICUAdmissionPredictor": {
+        "score": 0.9503936767578125,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "SepsisEarlyWarning": {
+        "score": 0.9997997879981995,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "DiabetesComplicationRisk": {
+        "score": 0.9999511241912842,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "HypertensionControlPredictor": {
+        "score": 0.6212207187464384,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "HeartFailure30DRisk": {
+        "score": 0.9824728965759277,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "StrokeRiskPredictor": {
+        "score": 0.6961304545402527,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "COPDExacerbationPredictor": {
+        "score": 0.32822655586777905,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "AKIRiskPredictor": {
+        "score": 0.9994884729385376,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "AdverseDrugEventPredictor": {
+        "score": 0.4526397701672054,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "NoShowAppointmentPredictor": {
+        "score": 0.48186147864392226,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "LengthOfStayRegressor": {
+        "prediction": 7.220789189983314
+      },
+      "CostOfCareRegressor": {
+        "prediction": 9323.8291015625
+      },
+      "AnemiaSeverityRegressor": {
+        "prediction": 2.4671898551913234
+      }
+    }
+  },
+  {
+    "patient_id": "902614",
+    "positive_models": 8,
+    "avg_score": 0.6672,
+    "models": {
+      "ReadmissionPredictor": {
+        "score": 0.08679810694397942,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "Readmission90DPredictor": {
+        "score": 0.08679810694397942,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "MortalityRiskModel": {
+        "score": 0.9872848391532898,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "ICUAdmissionPredictor": {
+        "score": 0.9503936767578125,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "SepsisEarlyWarning": {
+        "score": 0.9997997879981995,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "DiabetesComplicationRisk": {
+        "score": 0.9999511241912842,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "HypertensionControlPredictor": {
+        "score": 0.6212207187464384,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "HeartFailure30DRisk": {
+        "score": 0.9824728965759277,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "StrokeRiskPredictor": {
+        "score": 0.6961304545402527,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "COPDExacerbationPredictor": {
+        "score": 0.32822655586777905,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "AKIRiskPredictor": {
+        "score": 0.9994884729385376,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "AdverseDrugEventPredictor": {
+        "score": 0.4526397701672054,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "NoShowAppointmentPredictor": {
+        "score": 0.48186147864392226,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "LengthOfStayRegressor": {
+        "prediction": 7.220789189983314
+      },
+      "CostOfCareRegressor": {
+        "prediction": 9323.8291015625
+      },
+      "AnemiaSeverityRegressor": {
+        "prediction": 2.4671898551913234
+      }
+    }
+  },
+  {
+    "patient_id": "904741",
+    "positive_models": 8,
+    "avg_score": 0.6627,
+    "models": {
+      "ReadmissionPredictor": {
+        "score": 0.0648616552728069,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "Readmission90DPredictor": {
+        "score": 0.0648616552728069,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "MortalityRiskModel": {
+        "score": 0.8997639417648315,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "ICUAdmissionPredictor": {
+        "score": 0.971169650554657,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "SepsisEarlyWarning": {
+        "score": 0.9980529546737671,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "DiabetesComplicationRisk": {
+        "score": 0.9993492960929871,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "HypertensionControlPredictor": {
+        "score": 0.6600650815524626,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "HeartFailure30DRisk": {
+        "score": 0.9710818529129028,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "StrokeRiskPredictor": {
+        "score": 0.766150712966919,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "COPDExacerbationPredictor": {
+        "score": 0.33687049989706513,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "AKIRiskPredictor": {
+        "score": 0.9931049942970276,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "AdverseDrugEventPredictor": {
+        "score": 0.42748345307424596,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "NoShowAppointmentPredictor": {
+        "score": 0.46271311103426066,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "LengthOfStayRegressor": {
+        "prediction": 6.393777681491016
+      },
+      "CostOfCareRegressor": {
+        "prediction": 8988.99609375
+      },
+      "AnemiaSeverityRegressor": {
+        "prediction": 4.243280836451905
+      }
+    }
+  },
+  {
+    "patient_id": "904741",
+    "positive_models": 8,
+    "avg_score": 0.6627,
+    "models": {
+      "ReadmissionPredictor": {
+        "score": 0.0648616552728069,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "Readmission90DPredictor": {
+        "score": 0.0648616552728069,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "MortalityRiskModel": {
+        "score": 0.8997639417648315,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "ICUAdmissionPredictor": {
+        "score": 0.971169650554657,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "SepsisEarlyWarning": {
+        "score": 0.9980529546737671,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "DiabetesComplicationRisk": {
+        "score": 0.9993492960929871,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "HypertensionControlPredictor": {
+        "score": 0.6600650815524626,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "HeartFailure30DRisk": {
+        "score": 0.9710818529129028,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "StrokeRiskPredictor": {
+        "score": 0.766150712966919,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "COPDExacerbationPredictor": {
+        "score": 0.33687049989706513,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "AKIRiskPredictor": {
+        "score": 0.9931049942970276,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "AdverseDrugEventPredictor": {
+        "score": 0.42748345307424596,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "NoShowAppointmentPredictor": {
+        "score": 0.46271311103426066,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "LengthOfStayRegressor": {
+        "prediction": 6.393777681491016
+      },
+      "CostOfCareRegressor": {
+        "prediction": 8988.99609375
+      },
+      "AnemiaSeverityRegressor": {
+        "prediction": 4.243280836451905
+      }
+    }
+  },
+  {
+    "patient_id": "902701",
+    "positive_models": 8,
+    "avg_score": 0.6598,
+    "models": {
+      "ReadmissionPredictor": {
+        "score": 0.0676583623235898,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "Readmission90DPredictor": {
+        "score": 0.0676583623235898,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "MortalityRiskModel": {
+        "score": 0.9876148700714111,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "ICUAdmissionPredictor": {
+        "score": 0.9855327010154724,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "SepsisEarlyWarning": {
+        "score": 0.9998503923416138,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "DiabetesComplicationRisk": {
+        "score": 0.9999510049819946,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "HypertensionControlPredictor": {
+        "score": 0.5225413019694066,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "HeartFailure30DRisk": {
+        "score": 0.9940471649169922,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "StrokeRiskPredictor": {
+        "score": 0.7451618909835815,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "COPDExacerbationPredictor": {
+        "score": 0.30391818530634745,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "AKIRiskPredictor": {
+        "score": 0.9963297247886658,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "AdverseDrugEventPredictor": {
+        "score": 0.42416289306578026,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "NoShowAppointmentPredictor": {
+        "score": 0.4827555708579302,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "LengthOfStayRegressor": {
+        "prediction": 7.197907254572995
+      },
+      "CostOfCareRegressor": {
+        "prediction": 9424.4287109375
+      },
+      "AnemiaSeverityRegressor": {
+        "prediction": 6.1325390782618605
+      }
+    }
+  },
+  {
+    "patient_id": "902701",
+    "positive_models": 8,
+    "avg_score": 0.6598,
+    "models": {
+      "ReadmissionPredictor": {
+        "score": 0.0676583623235898,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "Readmission90DPredictor": {
+        "score": 0.0676583623235898,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "MortalityRiskModel": {
+        "score": 0.9876148700714111,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "ICUAdmissionPredictor": {
+        "score": 0.9855327010154724,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "SepsisEarlyWarning": {
+        "score": 0.9998503923416138,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "DiabetesComplicationRisk": {
+        "score": 0.9999510049819946,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "HypertensionControlPredictor": {
+        "score": 0.5225413019694066,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "HeartFailure30DRisk": {
+        "score": 0.9940471649169922,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "StrokeRiskPredictor": {
+        "score": 0.7451618909835815,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "COPDExacerbationPredictor": {
+        "score": 0.30391818530634745,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "AKIRiskPredictor": {
+        "score": 0.9963297247886658,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "AdverseDrugEventPredictor": {
+        "score": 0.42416289306578026,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "NoShowAppointmentPredictor": {
+        "score": 0.4827555708579302,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "LengthOfStayRegressor": {
+        "prediction": 7.197907254572995
+      },
+      "CostOfCareRegressor": {
+        "prediction": 9424.4287109375
+      },
+      "AnemiaSeverityRegressor": {
+        "prediction": 6.1325390782618605
+      }
+    }
+  },
+  {
+    "patient_id": "904061",
+    "positive_models": 8,
+    "avg_score": 0.6586,
+    "models": {
+      "ReadmissionPredictor": {
+        "score": 0.06956703079848901,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "Readmission90DPredictor": {
+        "score": 0.06956703079848901,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "MortalityRiskModel": {
+        "score": 0.9169246554374695,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "ICUAdmissionPredictor": {
+        "score": 0.8890905976295471,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "SepsisEarlyWarning": {
+        "score": 0.9997209906578064,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "DiabetesComplicationRisk": {
+        "score": 0.9999819993972778,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "HypertensionControlPredictor": {
+        "score": 0.6559282173428981,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "HeartFailure30DRisk": {
+        "score": 0.9900842905044556,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "StrokeRiskPredictor": {
+        "score": 0.7297107577323914,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "COPDExacerbationPredictor": {
+        "score": 0.34207547177583597,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "AKIRiskPredictor": {
+        "score": 0.9902861714363098,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "AdverseDrugEventPredictor": {
+        "score": 0.43921131443191236,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "NoShowAppointmentPredictor": {
+        "score": 0.46960177582960183,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "LengthOfStayRegressor": {
+        "prediction": 6.583058846125631
+      },
+      "CostOfCareRegressor": {
+        "prediction": 9176.220703125
+      },
+      "AnemiaSeverityRegressor": {
+        "prediction": 2.235598125497829
+      }
+    }
+  },
+  {
+    "patient_id": "904061",
+    "positive_models": 8,
+    "avg_score": 0.6586,
+    "models": {
+      "ReadmissionPredictor": {
+        "score": 0.06956703079848901,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "Readmission90DPredictor": {
+        "score": 0.06956703079848901,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "MortalityRiskModel": {
+        "score": 0.9169246554374695,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "ICUAdmissionPredictor": {
+        "score": 0.8890905976295471,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "SepsisEarlyWarning": {
+        "score": 0.9997209906578064,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "DiabetesComplicationRisk": {
+        "score": 0.9999819993972778,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "HypertensionControlPredictor": {
+        "score": 0.6559282173428981,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "HeartFailure30DRisk": {
+        "score": 0.9900842905044556,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "StrokeRiskPredictor": {
+        "score": 0.7297107577323914,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "COPDExacerbationPredictor": {
+        "score": 0.34207547177583597,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "AKIRiskPredictor": {
+        "score": 0.9902861714363098,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "AdverseDrugEventPredictor": {
+        "score": 0.43921131443191236,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "NoShowAppointmentPredictor": {
+        "score": 0.46960177582960183,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "LengthOfStayRegressor": {
+        "prediction": 6.583058846125631
+      },
+      "CostOfCareRegressor": {
+        "prediction": 9176.220703125
+      },
+      "AnemiaSeverityRegressor": {
+        "prediction": 2.235598125497829
+      }
+    }
+  },
+  {
+    "patient_id": "902600",
+    "positive_models": 8,
+    "avg_score": 0.6559,
+    "models": {
+      "ReadmissionPredictor": {
+        "score": 0.11018107868921295,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "Readmission90DPredictor": {
+        "score": 0.11018107868921295,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "MortalityRiskModel": {
+        "score": 0.9942355751991272,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "ICUAdmissionPredictor": {
+        "score": 0.9865216016769409,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "SepsisEarlyWarning": {
+        "score": 0.9999573230743408,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "DiabetesComplicationRisk": {
+        "score": 0.9999510049819946,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "HypertensionControlPredictor": {
+        "score": 0.5811729843747777,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "HeartFailure30DRisk": {
+        "score": 0.998908519744873,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "StrokeRiskPredictor": {
+        "score": 0.5130465626716614,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "COPDExacerbationPredictor": {
+        "score": 0.3308882607401024,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "AKIRiskPredictor": {
+        "score": 0.9995729327201843,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "AdverseDrugEventPredictor": {
+        "score": 0.44551885359898546,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "NoShowAppointmentPredictor": {
+        "score": 0.4563362115673498,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "LengthOfStayRegressor": {
+        "prediction": 7.241677770562909
+      },
+      "CostOfCareRegressor": {
+        "prediction": 8912.5947265625
+      },
+      "AnemiaSeverityRegressor": {
+        "prediction": 9.924925762393446
+      }
+    }
+  },
+  {
+    "patient_id": "902600",
+    "positive_models": 8,
+    "avg_score": 0.6559,
+    "models": {
+      "ReadmissionPredictor": {
+        "score": 0.11018107868921295,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "Readmission90DPredictor": {
+        "score": 0.11018107868921295,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "MortalityRiskModel": {
+        "score": 0.9942355751991272,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "ICUAdmissionPredictor": {
+        "score": 0.9865216016769409,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "SepsisEarlyWarning": {
+        "score": 0.9999573230743408,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "DiabetesComplicationRisk": {
+        "score": 0.9999510049819946,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "HypertensionControlPredictor": {
+        "score": 0.5811729843747777,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "HeartFailure30DRisk": {
+        "score": 0.998908519744873,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "StrokeRiskPredictor": {
+        "score": 0.5130465626716614,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "COPDExacerbationPredictor": {
+        "score": 0.3308882607401024,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "AKIRiskPredictor": {
+        "score": 0.9995729327201843,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "AdverseDrugEventPredictor": {
+        "score": 0.44551885359898546,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "NoShowAppointmentPredictor": {
+        "score": 0.4563362115673498,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "LengthOfStayRegressor": {
+        "prediction": 7.241677770562909
+      },
+      "CostOfCareRegressor": {
+        "prediction": 8912.5947265625
+      },
+      "AnemiaSeverityRegressor": {
+        "prediction": 9.924925762393446
+      }
+    }
+  },
+  {
+    "patient_id": "901983",
+    "positive_models": 8,
+    "avg_score": 0.6538,
+    "models": {
+      "ReadmissionPredictor": {
+        "score": 0.06078978742702213,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "Readmission90DPredictor": {
+        "score": 0.06078978742702213,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "MortalityRiskModel": {
+        "score": 0.9078007340431213,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "ICUAdmissionPredictor": {
+        "score": 0.9781088829040527,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "SepsisEarlyWarning": {
+        "score": 0.9986862540245056,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "DiabetesComplicationRisk": {
+        "score": 0.9999368190765381,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "HypertensionControlPredictor": {
+        "score": 0.7014880302120514,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "HeartFailure30DRisk": {
+        "score": 0.9482188820838928,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "StrokeRiskPredictor": {
+        "score": 0.6177409291267395,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "COPDExacerbationPredictor": {
+        "score": 0.34485527861589205,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "AKIRiskPredictor": {
+        "score": 0.9974676370620728,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "AdverseDrugEventPredictor": {
+        "score": 0.4332315111399728,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "NoShowAppointmentPredictor": {
+        "score": 0.4503232957319971,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "LengthOfStayRegressor": {
+        "prediction": 6.291570322500222
+      },
+      "CostOfCareRegressor": {
+        "prediction": 8894.37890625
+      },
+      "AnemiaSeverityRegressor": {
+        "prediction": 3.8443678302064264
+      }
+    }
+  },
+  {
+    "patient_id": "901983",
+    "positive_models": 8,
+    "avg_score": 0.6538,
+    "models": {
+      "ReadmissionPredictor": {
+        "score": 0.06078978742702213,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "Readmission90DPredictor": {
+        "score": 0.06078978742702213,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "MortalityRiskModel": {
+        "score": 0.9078007340431213,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "ICUAdmissionPredictor": {
+        "score": 0.9781088829040527,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "SepsisEarlyWarning": {
+        "score": 0.9986862540245056,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "DiabetesComplicationRisk": {
+        "score": 0.9999368190765381,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "HypertensionControlPredictor": {
+        "score": 0.7014880302120514,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "HeartFailure30DRisk": {
+        "score": 0.9482188820838928,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "StrokeRiskPredictor": {
+        "score": 0.6177409291267395,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "COPDExacerbationPredictor": {
+        "score": 0.34485527861589205,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "AKIRiskPredictor": {
+        "score": 0.9974676370620728,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "AdverseDrugEventPredictor": {
+        "score": 0.4332315111399728,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "NoShowAppointmentPredictor": {
+        "score": 0.4503232957319971,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "LengthOfStayRegressor": {
+        "prediction": 6.291570322500222
+      },
+      "CostOfCareRegressor": {
+        "prediction": 8894.37890625
+      },
+      "AnemiaSeverityRegressor": {
+        "prediction": 3.8443678302064264
+      }
+    }
+  },
+  {
+    "patient_id": "903011",
+    "positive_models": 8,
+    "avg_score": 0.6516,
+    "models": {
+      "ReadmissionPredictor": {
+        "score": 0.06129427953493756,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "Readmission90DPredictor": {
+        "score": 0.061294279534937546,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "MortalityRiskModel": {
+        "score": 0.9707733392715454,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "ICUAdmissionPredictor": {
+        "score": 0.8319844603538513,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "SepsisEarlyWarning": {
+        "score": 0.9985451698303223,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "DiabetesComplicationRisk": {
+        "score": 0.9999799728393555,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "HypertensionControlPredictor": {
+        "score": 0.6002424551789111,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "HeartFailure30DRisk": {
+        "score": 0.9621134996414185,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "StrokeRiskPredictor": {
+        "score": 0.8482788801193237,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "COPDExacerbationPredictor": {
+        "score": 0.3079271700882491,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "AKIRiskPredictor": {
+        "score": 0.9917013049125671,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "AdverseDrugEventPredictor": {
+        "score": 0.3765441440142114,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "NoShowAppointmentPredictor": {
+        "score": 0.4603191640612713,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "LengthOfStayRegressor": {
+        "prediction": 6.4445530086064196
+      },
+      "CostOfCareRegressor": {
+        "prediction": 8988.0517578125
+      },
+      "AnemiaSeverityRegressor": {
+        "prediction": 5.573977409688371
+      }
+    }
+  },
+  {
+    "patient_id": "903011",
+    "positive_models": 8,
+    "avg_score": 0.6516,
+    "models": {
+      "ReadmissionPredictor": {
+        "score": 0.06129427953493756,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "Readmission90DPredictor": {
+        "score": 0.061294279534937546,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "MortalityRiskModel": {
+        "score": 0.9707733392715454,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "ICUAdmissionPredictor": {
+        "score": 0.8319844603538513,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "SepsisEarlyWarning": {
+        "score": 0.9985451698303223,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "DiabetesComplicationRisk": {
+        "score": 0.9999799728393555,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "HypertensionControlPredictor": {
+        "score": 0.6002424551789111,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "HeartFailure30DRisk": {
+        "score": 0.9621134996414185,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "StrokeRiskPredictor": {
+        "score": 0.8482788801193237,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "COPDExacerbationPredictor": {
+        "score": 0.3079271700882491,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "AKIRiskPredictor": {
+        "score": 0.9917013049125671,
+        "pred": 1,
+        "threshold": 0.5
+      },
+      "AdverseDrugEventPredictor": {
+        "score": 0.3765441440142114,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "NoShowAppointmentPredictor": {
+        "score": 0.4603191640612713,
+        "pred": 0,
+        "threshold": 0.5
+      },
+      "LengthOfStayRegressor": {
+        "prediction": 6.4445530086064196
+      },
+      "CostOfCareRegressor": {
+        "prediction": 8988.0517578125
+      },
+      "AnemiaSeverityRegressor": {
+        "prediction": 5.573977409688371
+      }
+    }
+  }
+]
+```
+
+## Top Anomalies
+```json
+[
+  {
+    "patient_id": "904478",
+    "anomaly_flag": 1,
+    "anomaly_score": 0.11562812370012276
+  },
+  {
+    "patient_id": "904478",
+    "anomaly_flag": 1,
+    "anomaly_score": 0.11562812370012276
+  },
+  {
+    "patient_id": "904294",
+    "anomaly_flag": 1,
+    "anomaly_score": 0.09021468339629168
+  },
+  {
+    "patient_id": "904294",
+    "anomaly_flag": 1,
+    "anomaly_score": 0.09021468339629168
+  },
+  {
+    "patient_id": "902070",
+    "anomaly_flag": 1,
+    "anomaly_score": 0.08546330906518795
+  },
+  {
+    "patient_id": "902070",
+    "anomaly_flag": 1,
+    "anomaly_score": 0.08546330906518795
+  },
+  {
+    "patient_id": "903633",
+    "anomaly_flag": 1,
+    "anomaly_score": 0.08176340094357115
+  },
+  {
+    "patient_id": "903633",
+    "anomaly_flag": 1,
+    "anomaly_score": 0.08176340094357115
+  },
+  {
+    "patient_id": "904640",
+    "anomaly_flag": 1,
+    "anomaly_score": 0.08006840413535032
+  },
+  {
+    "patient_id": "904640",
+    "anomaly_flag": 1,
+    "anomaly_score": 0.08006840413535032
+  },
+  {
+    "patient_id": "901629",
+    "anomaly_flag": 1,
+    "anomaly_score": 0.07701391124725643
+  },
+  {
+    "patient_id": "901629",
+    "anomaly_flag": 1,
+    "anomaly_score": 0.07701391124725643
+  },
+  {
+    "patient_id": "902382",
+    "anomaly_flag": 1,
+    "anomaly_score": 0.07279736682400262
+  },
+  {
+    "patient_id": "902382",
+    "anomaly_flag": 1,
+    "anomaly_score": 0.07279736682400262
+  },
+  {
+    "patient_id": "902629",
+    "anomaly_flag": 1,
+    "anomaly_score": 0.06868472339752296
+  },
+  {
+    "patient_id": "902629",
+    "anomaly_flag": 1,
+    "anomaly_score": 0.06868472339752296
+  },
+  {
+    "patient_id": "904558",
+    "anomaly_flag": 1,
+    "anomaly_score": 0.06861475163106334
+  },
+  {
+    "patient_id": "904558",
+    "anomaly_flag": 1,
+    "anomaly_score": 0.06861475163106334
+  },
+  {
+    "patient_id": "900781",
+    "anomaly_flag": 1,
+    "anomaly_score": 0.06802575891606388
+  },
+  {
+    "patient_id": "900781",
+    "anomaly_flag": 1,
+    "anomaly_score": 0.06802575891606388
+  }
+]
+```
