@@ -3,9 +3,9 @@ import { Target, Brain, Settings, CheckCircle, Eye, BarChart3 } from 'lucide-rea
 
 function KV({ label, value }) {
   return (
-    <div className="flex items-start justify-between gap-4 py-3 border-b border-purple-100/50">
+    <div className="flex flex-col gap-2 py-3 border-b border-purple-100/50">
       <div className="text-gray-600 font-medium">{label}</div>
-      <div className="font-semibold text-gray-800 text-right bg-gradient-to-r from-violet-50 to-purple-50 px-3 py-1 rounded-lg border border-violet-100">
+      <div className="font-semibold text-gray-800 bg-gradient-to-r from-violet-50 to-purple-50 px-3 py-2 rounded-lg border border-violet-100 break-words whitespace-pre-wrap text-sm leading-relaxed">
         {String(value ?? '-')}
       </div>
     </div>
@@ -80,10 +80,10 @@ export default function StrategyReadable({ strategy, sectionRefs }) {
               Selected Models
             </h3>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {s.selected_models.map(m => (
               <div key={m} className="group bg-gradient-to-br from-white to-indigo-50 border border-indigo-200 rounded-xl p-4 hover:shadow-lg transition-all duration-200 hover:-translate-y-1 hover:border-indigo-300">
-                <span className="font-semibold text-gray-800 group-hover:text-indigo-700 transition-colors">
+                <span className="font-semibold text-gray-800 group-hover:text-indigo-700 transition-colors break-words">
                   {m}
                 </span>
               </div>
@@ -106,11 +106,11 @@ export default function StrategyReadable({ strategy, sectionRefs }) {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {Object.entries(thresholds).map(([k, v]) => (
               <div key={k} className="group bg-gradient-to-br from-white to-pink-50 border border-pink-200 rounded-xl p-4 hover:shadow-lg transition-all duration-200 hover:-translate-y-1">
-                <div className="flex items-center justify-between">
-                  <div className="text-gray-700 font-medium group-hover:text-pink-700 transition-colors">
+                <div className="flex flex-col gap-2">
+                  <div className="text-gray-700 font-medium group-hover:text-pink-700 transition-colors break-words text-sm">
                     {k}
                   </div>
-                  <div className="bg-gradient-to-r from-pink-500 to-rose-500 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-sm">
+                  <div className="bg-gradient-to-r from-pink-500 to-rose-500 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-sm w-fit">
                     {v}
                   </div>
                 </div>
@@ -130,7 +130,7 @@ export default function StrategyReadable({ strategy, sectionRefs }) {
             Preprocessing
           </h3>
         </div>
-        <div className="grid sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           {preprocessing.imputation && (
             <div className="bg-gradient-to-br from-white to-teal-50 border border-teal-200 rounded-xl p-4 hover:shadow-md transition-all duration-200">
               <KV label="Imputation" value={preprocessing.imputation} />
@@ -164,7 +164,7 @@ export default function StrategyReadable({ strategy, sectionRefs }) {
             Validation
           </h3>
         </div>
-        <div className="grid sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           <div className="bg-gradient-to-br from-white to-amber-50 border border-amber-200 rounded-xl p-4 hover:shadow-md transition-all duration-200">
             <KV label="CV Folds" value={s.validation_plan?.cv_folds ?? '-'} />
           </div>
@@ -204,11 +204,11 @@ export default function StrategyReadable({ strategy, sectionRefs }) {
               Visualization Specs
             </h3>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {Object.entries(s.visualization_specifications).map(([k, v]) => (
               <div key={k} className="bg-gradient-to-br from-white to-purple-50 border border-purple-200 rounded-xl p-4 hover:shadow-lg transition-all duration-200 hover:-translate-y-1">
-                <div className="font-semibold text-gray-800 mb-3 text-lg">{k}</div>
-                <pre className="text-xs text-gray-600 bg-gradient-to-r from-gray-50 to-purple-50 p-3 rounded-lg overflow-x-auto border border-gray-200 font-mono">
+                <div className="font-semibold text-gray-800 mb-3 text-lg break-words">{k}</div>
+                <pre className="text-xs text-gray-600 bg-gradient-to-r from-gray-50 to-purple-50 p-3 rounded-lg overflow-x-auto border border-gray-200 font-mono break-words whitespace-pre-wrap">
                   {JSON.stringify(v, null, 2)}
                 </pre>
               </div>
@@ -232,10 +232,10 @@ export default function StrategyReadable({ strategy, sectionRefs }) {
             {llm.map((m, i) => (
               <div key={i} className="group bg-gradient-to-br from-white to-violet-50 border border-violet-200 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <div className="flex items-center justify-between flex-wrap gap-3 mb-4">
-                  <div className="font-bold text-xl text-gray-800 group-hover:text-violet-700 transition-colors">
+                  <div className="font-bold text-xl text-gray-800 group-hover:text-violet-700 transition-colors break-words">
                     {m.model_name}
                   </div>
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-3 flex-wrap">
                     <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-700 border border-blue-200 shadow-sm">
                       {m.task_type}
                     </span>
@@ -249,7 +249,7 @@ export default function StrategyReadable({ strategy, sectionRefs }) {
                     <div className="text-gray-600 font-semibold mb-3">Target Signals</div>
                     <div className="flex flex-wrap gap-2">
                       {m.target_signal_candidates.map(t => (
-                        <span key={t} className="inline-flex items-center px-3 py-2 rounded-lg text-sm font-semibold bg-gradient-to-r from-amber-100 to-orange-100 text-amber-700 border border-amber-200 shadow-sm hover:shadow-md transition-shadow">
+                        <span key={t} className="inline-flex items-center px-3 py-2 rounded-lg text-sm font-semibold bg-gradient-to-r from-amber-100 to-orange-100 text-amber-700 border border-amber-200 shadow-sm hover:shadow-md transition-shadow break-words">
                           {t}
                         </span>
                       ))}
@@ -258,7 +258,7 @@ export default function StrategyReadable({ strategy, sectionRefs }) {
                 )}
                 {m.rationale && (
                   <div className="bg-gradient-to-r from-gray-50 to-violet-50 border border-gray-200 rounded-xl p-4 shadow-inner">
-                    <div className="text-gray-700 leading-relaxed">
+                    <div className="text-gray-700 leading-relaxed break-words whitespace-pre-wrap">
                       {m.rationale}
                     </div>
                   </div>

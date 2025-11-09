@@ -16,9 +16,9 @@ def _gemini_client():
     if not _GEMINI_KEY:
         return None
     try:
-        import google.generativeai as genai  # type: ignore
-        genai.configure(api_key=_GEMINI_KEY)
-        return genai
+        import google.genai as genai  # type: ignore
+        client = genai.Client(api_key=_GEMINI_KEY)
+        return client
     except Exception:
         return None
 
@@ -64,12 +64,16 @@ class AIInsightGenerator:
         anomaly_results = payload.get("anomaly_results") or {}
         schema = payload.get("schema") or {}
 
-        genai = _gemini_client()
-        if genai is not None:
+        client = _gemini_client()
+        if client is not None:
             try:
-                model = genai.GenerativeModel("gemini-1.5-flash")
                 ctx = {"strategy": strategy, "model_results": model_results, "anomaly_results": anomaly_results, "schema": schema}
-                resp = model.generate_content(_LLM_REPORT_PROMPT + "\n\n" + json.dumps(ctx, default=self._safe_default))
+                
+                resp = client.models.generate_content(
+                    model='gemini-2.5-flash',
+                    contents=[_LLM_REPORT_PROMPT + "\n\n" + json.dumps(ctx, default=self._safe_default)]
+                )
+                
                 text = getattr(resp, "text", None) or (
                     resp.candidates[0].content.parts[0].text if getattr(resp, "candidates", None) else None
                 )
@@ -84,7 +88,8 @@ class AIInsightGenerator:
                         viz = self._with_default_viz_titles(viz)
                         parsed["visualization_titles"] = viz
                         return parsed
-            except Exception:
+            except Exception as e:
+                print(f"Error occurred while generating report: {e}")
                 pass  # deterministic fallback below
 
         return self._deterministic_summary(strategy, model_results, anomaly_results, schema)

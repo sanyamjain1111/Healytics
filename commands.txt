@@ -1,7 +1,19 @@
 python -m training_data.model_training_scripts.train_all_models_full
 
-$body = @{ dataset_id = 9; strategy_id =14 } | ConvertTo-Json
+$body = @{ dataset_id = 10; strategy_id =40 } | ConvertTo-Json
 Invoke-RestMethod -Method Post -Uri "http://127.0.0.1:8000/analytics/run" -ContentType "application/json" -Body $body
 
-$body = @{ dataset_id = 9 } | ConvertTo-Json
+$body = @{ dataset_id = 10 } | ConvertTo-Json
 Invoke-RestMethod -Method Post -Uri "http://127.0.0.1:8000/reports/generate" -ContentType "application/json" -Body $body
+
+# generate a smaller strategy (e.g., only critical-care models)
+$body = @{ dataset_id = 10; preset_id = 'critical-care' } | ConvertTo-Json
+$resp = Invoke-RestMethod -Method Post -Uri "http://127.0.0.1:8000/strategy/generate" -ContentType "application/json" -Body $body
+$sid = $resp.strategy.id
+
+# run analysis with that strategy
+$run = @{ dataset_id = 10; strategy_id = $sid } | ConvertTo-Json
+Invoke-RestMethod -Method Post -Uri "http://127.0.0.1:8000/analytics/run" -ContentType "application/json" -Body $run
+
+$req = @{ dataset_id = 10 } | ConvertTo-Json
+Invoke-RestMethod -Method Post -Uri "http://127.0.0.1:8000/analytics/adhoc/predict" -ContentType "application/json" -Body $req

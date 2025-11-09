@@ -188,9 +188,9 @@ def _gemini():
     if not _GEMINI_KEY:
         return None
     try:
-        import google.generativeai as genai  # type: ignore
-        genai.configure(api_key=_GEMINI_KEY)
-        return genai
+        import google.genai as genai  # type: ignore
+        client = genai.Client(api_key=_GEMINI_KEY)
+        return client
     except Exception:
         return None
 
@@ -260,11 +260,10 @@ class GeminiStrategist:
             "dataset_profile": profile
         }
 
-        genai = _gemini()
-        if genai is not None:
+        client = _gemini()
+        print(client is None)
+        if client is not None:
             try:
-                model = genai.GenerativeModel("gemini-1.5-flash")
-                
                 prompt = "\n".join([
                     _SYSTEM_INSTRUCTIONS.strip(),
                     "<CONTEXT>",
@@ -272,7 +271,10 @@ class GeminiStrategist:
                     "</CONTEXT>"
                 ])
                 
-                resp = model.generate_content(prompt)
+                resp = client.models.generate_content(
+                    model='gemini-2.5-flash',
+                    contents=[prompt]
+                )
                 
                 text = getattr(resp, "text", None) or (
                     resp.candidates[0].content.parts[0].text if getattr(resp, "candidates", None) else None
@@ -294,8 +296,9 @@ class GeminiStrategist:
                             "llm_models_block": models
                         }
                         return parsed, "Gemini strategy (gemini-1.5-flash)"
-                        
-            except Exception:
+
+            except Exception as e:
+                print("The error is", e)
                 pass
 
         # Heuristic fallback
