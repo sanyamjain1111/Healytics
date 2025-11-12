@@ -1,19 +1,33 @@
 import React, { useState } from 'react';
 import { Brain, User, Dice3, X, Eye, EyeOff, ChevronDown, Loader2, AlertCircle, CheckCircle } from 'lucide-react';
 import { api } from '../api';
-
+import { listDatasets, listCreatedStrategies } from '../api';
 // Import the actual ModelOutputs component
 import ModelOutputs from './ModelOutputs';
 
 export default function AdhocPage() {
   const [datasetId, setDatasetId] = useState('');
   const [strategyId, setStrategyId] = useState('');
+  const [datasets, setDatasets] = useState([]);
+  const [createdStrategies, setCreatedStrategies] = useState([]);
   const [patient, setPatient] = useState({});
   const [res, setRes] = useState(null);
   const [note, setNote] = useState('');
   const [showInputs, setShowInputs] = useState(true);
   const [loading, setLoading] = useState(false);
-
+  React.useEffect(() => {
+    // Adhoc uses DB datasets
+    listDatasets()
+      .then(ds => setDatasets((ds || []).filter(d => d.source === 'db')))
+      .catch(console.error);
+  }, []);
+  React.useEffect(() => {
+    if (datasetId) {
+      listCreatedStrategies(datasetId).then(setCreatedStrategies).catch(console.error);
+    } else {
+      setCreatedStrategies([]);
+    }
+  }, [datasetId]);
   async function loadSample() {
     setNote('');
     setRes(null);
@@ -83,23 +97,33 @@ export default function AdhocPage() {
 
             <div className="grid md:grid-cols-3 gap-6 mb-6">
               <div className="space-y-3">
-                <label className="block text-sm font-semibold text-gray-700">Dataset ID</label>
-                <input 
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-violet-400 focus:ring-4 focus:ring-violet-100 transition-all duration-200 bg-white/80"
-                  value={datasetId} 
+                <label className="block text-sm font-semibold text-gray-700">Dataset</label>
+                <select
+                  className="w-full px-4 py-3 border-2 rounded-xl focus:outline-none focus:ring-4"
+                  value={datasetId}
                   onChange={e => setDatasetId(e.target.value)}
-                  placeholder="Enter dataset ID..."
-                />
+                >
+                  <option value="">Select a dataset…</option>
+                  {datasets.map(d => (
+                    <option key={`${d.source}:${d.id}`} value={d.id}>
+                      {(d.name || d.filename || `Dataset ${d.id}`)}
+                    </option>
+                  ))}
+                </select>
               </div>
               <div className="space-y-3">
-                <label className="block text-sm font-semibold text-gray-700">Strategy ID (optional)</label>
-                <input 
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-violet-400 focus:ring-4 focus:ring-violet-100 transition-all duration-200 bg-white/80"
-                  value={strategyId} 
+                <label className="block text-sm font-semibold text-gray-700">Strategy (optional)</label>
+                <select
+                  className="w-full px-4 py-3 border-2 rounded-xl focus:outline-none focus:ring-4"
+                  value={strategyId}
                   onChange={e => setStrategyId(e.target.value)}
-                  placeholder="Enter strategy ID..."
-                />
-              </div>
+                >
+                  <option value="">No strategy (optional)</option>
+                  {createdStrategies.map(s => (
+                    <option key={s.id} value={s.id}>{s.title || `Strategy ${s.id}`}</option>
+                  ))}
+                </select>
+            </div>
               <div className="space-y-3">
                 <label className="block text-sm font-semibold text-gray-700 opacity-0">Actions</label>
                 <div className="flex gap-3">

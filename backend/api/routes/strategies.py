@@ -2,7 +2,8 @@
 from __future__ import annotations
 from typing import Dict, Any, Optional, List
 import json, os
-from fastapi import APIRouter, HTTPException, Body, Query, Form, Request
+from fastapi import APIRouter, HTTPException, Body, Query, Form, Request, Depends
+from .auth import get_current_user
 from pydantic import BaseModel
 from sqlalchemy import create_engine, text
 from sqlalchemy.engine import Engine
@@ -68,6 +69,7 @@ DDL = """
 CREATE TABLE IF NOT EXISTS strategies (
   id SERIAL PRIMARY KEY,
   dataset_id VARCHAR(255) NOT NULL,
+  title TEXT,
   raw_text TEXT,
   parsed JSONB,
   created_at TIMESTAMPTZ DEFAULT NOW()
@@ -79,6 +81,8 @@ def _ensure_tables(engine: Engine) -> None:
             st = stmt.strip()
             if st:
                 con.execute(text(st + ";"))
+        # migration to ensure 'title' exists in older DBs
+        con.execute(text("ALTER TABLE strategies ADD COLUMN IF NOT EXISTS title TEXT;"))
 
 def _all_catalog_models() -> List[str]:
     return [m for s in STRATEGIES for m in s["models"]]
@@ -122,7 +126,7 @@ async def _try_gemini_generate(dataset_id: str, objective: Optional[str]) -> tup
     parsed["thresholds"] = {k: v for k, v in th.items() if k in CLASSIFIERS}
     return parsed, f"{rationale}"
 # Public helper
-async def create_and_store_strategy(dataset_id: str, preset_id: Optional[str] = None, objective: Optional[str] = None) -> Dict[str, Any]:
+async def create_and_store_strategy(dataset_id: str, preset_id: Optional[str] = None, objective: Optional[str] = None, title: Optional[str] = None,user_id: Optional[int] = None,) -> Dict[str, Any]:
     eng = _get_engine()
     _ensure_tables(eng)
 
@@ -169,13 +173,27 @@ async def create_and_store_strategy(dataset_id: str, preset_id: Optional[str] = 
 
     raw_text = rationale + "\n\n" + json.dumps(parsed, indent=2)
     with eng.begin() as con:
+        ins_title = title or _default_title(parsed)
         sid = con.execute(
-            text("INSERT INTO strategies (dataset_id, raw_text, parsed) VALUES (:d, :t, :p) RETURNING id"),
-            {"d": str(dataset_id), "t": raw_text, "p": json.dumps(parsed)}
+            text("INSERT INTO strategies (dataset_id, user_id, title, raw_text, parsed) VALUES (:d, :u, :title, :t, :p) RETURNING id"),
+            {"d": str(dataset_id), "u": int(user_id) if user_id is not None else None, "title": ins_title, "t": raw_text, "p": json.dumps(parsed)}
+
         ).scalar_one()
 
-    return {"id": int(sid), "dataset_id": str(dataset_id), "raw_text": raw_text, "parsed": parsed}
-
+    return {"id": int(sid), "dataset_id": str(dataset_id), "user_id": int(user_id) if user_id is not None else None, "title": (title or _default_title(parsed)), "raw_text": raw_text, "parsed": parsed}
+def _default_title(parsed: dict | None) -> str:
+    try:
+        models = (parsed or {}).get("selected_models") or []
+        names = []
+        for m in models:
+            if isinstance(m, str):
+                names.append(m)
+            elif isinstance(m, dict) and "model_name" in m:
+                names.append(str(m["model_name"]))
+        base = ", ".join(names[:2]) or "Untitled"
+        return f"Strategy – {base}"
+    except Exception:
+        return "Strategy"
 # API models & endpoints
 class StrategyRequest(BaseModel):
     dataset_id: Optional[str] = None
@@ -196,9 +214,12 @@ async def generate_strategy(
     dataset_id_q: Optional[str] = Query(default=None, alias="dataset_id"),
     preset_id_q: Optional[str] = Query(default=None, alias="preset_id"),
     objective_q: Optional[str] = Query(default=None, alias="objective"),
+    title_q: Optional[str] = Query(default=None, alias="title"),
     dataset_id_f: Optional[str] = Form(default=None),
     preset_id_f: Optional[str] = Form(default=None),
     objective_f: Optional[str] = Form(default=None),
+    title_f: Optional[str] = Form(default=None),
+    user=Depends(get_current_user)
 ) -> Dict[str, Any]:
     body = None
     if "application/json" in (request.headers.get("content-type") or ""):
@@ -212,9 +233,31 @@ async def generate_strategy(
     dataset_id = (body or {}).get("dataset_id") or dataset_id_q or dataset_id_f
     preset_id  = (body or {}).get("preset_id")  or preset_id_q  or preset_id_f
     objective  = (body or {}).get("objective")  or objective_q  or objective_f
+    title      = (body or {}).get("title")      or title_q      or title_f
 
     if dataset_id is None:
         raise HTTPException(status_code=400, detail="dataset_id is required.")
 
-    strategy = await create_and_store_strategy(dataset_id=dataset_id, preset_id=preset_id, objective=objective)
+    strategy = await create_and_store_strategy(dataset_id=dataset_id, preset_id=preset_id, objective=objective, title=title, user_id=int(user["id"]))
     return {"strategy": strategy}
+
+@router.get("/strategies/created")
+def list_created_strategies(dataset_id: Optional[str] = Query(default=None, alias="dataset_id"), user=Depends(get_current_user)) -> Dict[str, Any]:
+    eng = _get_engine()
+    _ensure_tables(eng)
+    with eng.begin() as con:
+        if dataset_id is None:
+            rows = con.execute(text("SELECT id, dataset_id, COALESCE(title,'') AS title, created_at FROM strategies WHERE user_id=:u ORDER BY id DESC"), {"u": int(user["id"])}).mappings().all()
+        else:
+            rows = con.execute(text("SELECT id, dataset_id, COALESCE(title,'') AS title, created_at FROM strategies WHERE dataset_id=:d AND user_id=:u ORDER BY id DESC"), {"d": str(dataset_id), "u": int(user["id"])}).mappings().all()
+    return {
+        "strategies": [
+            {
+                "id": int(r["id"]),
+                "dataset_id": str(r["dataset_id"]),
+                "title": (r.get("title") or f"Strategy {int(r['id'])}"),
+                "created_at": (str(r["created_at"]) if r.get("created_at") else None),
+            }
+            for r in rows
+        ]
+    }

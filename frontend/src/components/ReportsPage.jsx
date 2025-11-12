@@ -2,9 +2,11 @@ import ReportReadable from './ReportReadable';
 import React, { useState } from 'react';
 import { FileText, BarChart3, Loader2, AlertCircle, CheckCircle } from 'lucide-react';
 import { api } from '../api';
-
+import { listDatasets } from '../api';
 export default function ReportsPage() {
   const [datasetId, setDatasetId] = useState('');
+  const [datasets, setDatasets] = useState([]);
+  React.useEffect(() => { listDatasets().then(setDatasets).catch(console.error); }, []);
   const [res, setRes] = useState(null);
   const [loading, setLoading] = useState(false);
   const [note, setNote] = useState('');
@@ -52,14 +54,20 @@ export default function ReportsPage() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 items-end">
-            <div className="md:col-span-2 space-y-3">
-              <label className="block text-sm font-semibold text-gray-700">Dataset ID</label>
-              <input 
-                className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-violet-400 focus:ring-4 focus:ring-violet-100 transition-all duration-200 bg-white/80"
-                value={datasetId} 
+            <div className="space-y-3">
+              <label className="block text-sm font-semibold text-gray-700">Dataset</label>
+              <select
+                className="w-full px-4 py-3 border-2 rounded-xl focus:outline-none focus:ring-4"
+                value={datasetId}
                 onChange={e => setDatasetId(e.target.value)}
-                placeholder="Enter dataset ID to generate report..."
-              />
+              >
+                <option value="">Select a dataset…</option>
+                {datasets.map(d => (
+                  <option key={`${d.source}:${d.id}`} value={d.id}>
+                    {(d.name || d.filename || `Dataset ${d.id}`)} {d.source ? `(${d.source})` : ''}
+                  </option>
+                ))}
+              </select>
             </div>
             
             <button 

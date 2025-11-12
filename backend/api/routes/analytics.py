@@ -2,7 +2,7 @@
 from __future__ import annotations
 
 from typing import Dict, Any, List, Optional, Iterable
-from fastapi import APIRouter, HTTPException, Query
+from fastapi import APIRouter, HTTPException, Query, Depends
 from pydantic import BaseModel
 import os
 import json
@@ -25,7 +25,9 @@ from sqlalchemy.engine import Engine
 import joblib
 from ...paths import ARTIFACT_DIR
 
-
+from .auth import get_current_user
+from .datasets import _get_engine
+from sqlalchemy import text
 # -------- json export helper --------
 try:
     from utils.json_export import write_json as _write_json
@@ -266,16 +268,27 @@ def _load_df(dataset_id: int) -> pd.DataFrame:
         status_code=404,
         detail=f"Dataset not found. Attempted methods: {error_details}"
     )
-
-
+def _assert_owned(dataset_id: int, user_id: int) -> None:
+    try:
+        eng = _get_engine()
+        with eng.begin() as con:
+            row = con.execute(text("SELECT user_id FROM datasets WHERE id=:d"), {"d": int(dataset_id)}).mappings().first()
+            if not row or int(row.get("user_id") or -1) != int(user_id):
+                raise HTTPException(status_code=403, detail="Not allowed")
+    except HTTPException:
+        raise
+    except Exception:
+        raise HTTPException(status_code=403, detail="Not allowed")
 # ---------------- Existing endpoints ----------------
 
 @router.get("/histograms")
 def histograms(
     dataset_id: int = Query(...),
     columns: Optional[str] = Query(None),
-    bins: int = Query(20, ge=5, le=200)
+    bins: int = Query(20, ge=5, le=200),
+    user=Depends(get_current_user)
 ) -> Dict[str, Any]:
+    _assert_owned(dataset_id, int(user["id"]))
     df = _load_df(dataset_id)
     cols = None
     if columns:
@@ -315,7 +328,8 @@ class AdhocPredictRequest(BaseModel):
 
 
 @router.get("/adhoc/random")
-def adhoc_random(dataset_id: int = Query(...)) -> Dict[str, Any]:
+def adhoc_random(dataset_id: int = Query(...), user=Depends(get_current_user)) -> Dict[str, Any]:
+    _assert_owned(dataset_id, int(user["id"]))  
     df = _load_df(dataset_id)
     if df.empty:
         raise HTTPException(status_code=404, detail="No records in dataset")
@@ -422,7 +436,8 @@ def _load_latest_strategy(engine: Engine, dataset_id: int) -> Optional[Dict[str,
 
 
 @router.post("/adhoc/predict")
-def adhoc_predict(req: AdhocPredictRequest) -> Dict[str, Any]:
+def adhoc_predict(req: AdhocPredictRequest, user=Depends(get_current_user)) -> Dict[str, Any]:
+    _assert_owned(req.dataset_id, int(user["id"]))
     df = _load_df(req.dataset_id)
     if req.patient is not None:
         x = pd.DataFrame([req.patient])
@@ -476,7 +491,8 @@ class AnalysisRunRequest(BaseModel):
 
 
 @router.post("/run")
-def run_analysis(req: AnalysisRunRequest) -> Dict[str, Any]:
+def run_analysis(req: AnalysisRunRequest, user=Depends(get_current_user)) -> Dict[str, Any]:
+    _assert_owned(req.dataset_id, int(user["id"]))
     print(f"Running analysis for dataset {req.dataset_id} with strategy {req.strategy_id}")
     df = _load_df(req.dataset_id)
     if df.empty:

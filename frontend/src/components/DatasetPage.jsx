@@ -81,32 +81,11 @@ export default function DatasetPage() {
       console.log('FormData created, making request to /datasets/upload');
       
       const client = api();
-      const baseURL = client.defaults?.baseURL || client.baseURL || '';
-      console.log('Base URL:', baseURL);
-      
-      let response, result;
-      
-      if (baseURL) {
-        const fullURL = baseURL + '/datasets/upload';
-        console.log('Trying fetch with URL:', fullURL);
-        
-        response = await fetch(fullURL, {
-          method: 'POST',
-          body: form
-        });
-        
-        if (!response.ok) {
-          const errorText = await response.text();
-          console.error('Fetch response error:', errorText);
-          throw new Error(`HTTP ${response.status}: ${errorText}`);
-        }
-        
-        result = await response.json();
-      } else {
-        console.log('No base URL found, trying API client...');
-        response = await client.post('/datasets/upload', form);
-        result = response.data || response;
-      }
+      // Let axios set proper multipart boundaries; interceptor will attach Authorization
+      const response = await client.post('/datasets/upload', form, {
+        headers: { /* content-type omitted intentionally */ }
+      });
+      const result = response.data || response;
       
       console.log('Upload response:', result);
       

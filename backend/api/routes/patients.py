@@ -1,10 +1,10 @@
 from __future__ import annotations
 from typing import Dict, Any, List
-from fastapi import APIRouter, HTTPException, Query
+from fastapi import APIRouter, HTTPException, Query, Depends    
 import pandas as pd
 import numpy as np
 from ..services.datasets_service import registry, load_dataframe
-
+from .auth import get_current_user
 router = APIRouter(prefix="/patients", tags=["patients"])
 
 ID_HINTS = ("patient", "mrn", "name", "id", "identifier")
@@ -13,8 +13,21 @@ ID_HINTS = ("patient", "mrn", "name", "id", "identifier")
 def search_patients(
     dataset_id: str = Query(...),
     q: str = Query(..., min_length=1),
-    limit: int = Query(50, ge=1, le=500)
+    limit: int = Query(50, ge=1, le=500),
+    user=Depends(get_current_user)
 ) -> Dict[str, Any]:
+    # ensure registry dataset belongs to user
+    entry = None
+    try:
+        for e in registry.list(user_id=int(user["id"])):
+            if str(e.get("id")) == str(dataset_id):
+                entry = e
+                break
+    except Exception:
+        pass
+    if not entry:
+        raise HTTPException(status_code=403, detail="Not allowed")
+
     ds = registry.get(dataset_id)
     if not ds:
         raise HTTPException(status_code=404, detail="Dataset not found")

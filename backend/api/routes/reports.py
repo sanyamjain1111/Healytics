@@ -246,14 +246,17 @@ def _maybe_run_ai_insights(ai_payload: Dict[str, Any]) -> Optional[Dict[str, Any
     except Exception:
         traceback.print_exc()
         return None
-
+from ..routes.auth import get_current_user
+from ..routes.analytics import _assert_owned
+from fastapi import Depends, Body
 # ---------- endpoints ----------
 @router.post("/generate")
-def generate_report(req: ReportGenerateRequest) -> Dict[str, Any]:
+def generate_report(req: ReportGenerateRequest = Body(...), user = Depends(get_current_user)) -> Dict[str, Any]:
     """
     Build insights via Gemini (JSON output) plus a Markdown file.
     The AI executive summary is used verbatim (300–400 words). Heuristic text is used only as a fallback.
     """
+    _assert_owned(req.dataset_id, int(user["id"]))
     eng = _get_engine()
     _ensure_tables(eng)
 

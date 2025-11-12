@@ -4,11 +4,12 @@ import json
 import uuid
 from typing import List, Optional, Dict, Any
 
-from fastapi import APIRouter, UploadFile, File, Form, HTTPException
+from fastapi import APIRouter, UploadFile, File, Form, HTTPException, Depends, Request
 import pandas as pd
 
 # file registry compatibility
 from ..services.datasets_service import registry, load_dataframe, ensure_data_dir
+from .auth import get_current_user
 from ..services.analysis_service import dataframe_overview, head_sample
 
 # DB plumbing
@@ -55,6 +56,7 @@ def _load_registry_df(dataset_id: str | int) -> Optional[pd.DataFrame]:
     except Exception:
         pass
     return None
+
 def _only_scalar_columns(df: pd.DataFrame) -> pd.DataFrame:
     keep = []
     for c in df.columns:
@@ -132,11 +134,13 @@ def _ensure_tables(engine: Engine) -> None:
             st = stmt.strip()
             if st:
                 con.execute(text(st + ";"))
+        # multi-tenant
+        con.execute(text("ALTER TABLE datasets ADD COLUMN IF NOT EXISTS user_id INT;"))
 
-def _register_dataset(engine: Engine, name: str, n_rows: int, n_cols: int) -> int:
-    q = text("INSERT INTO datasets (name, n_rows, n_cols) VALUES (:name, :r, :c) RETURNING id")
+def _register_dataset(engine: Engine, name: str, n_rows: int, n_cols: int, user_id: int) -> int:
+    q = text("INSERT INTO datasets (name, n_rows, n_cols, user_id) VALUES (:name, :r, :c, :u) RETURNING id")
     with engine.begin() as con:
-        dsid = con.execute(q, {"name": name, "r": int(n_rows), "c": int(n_cols)}).scalar_one()
+        dsid = con.execute(q, {"name": name, "r": int(n_rows), "c": int(n_cols), "u": int(user_id)}).scalar_one()
     return int(dsid)
 
 def _insert_records(engine: Engine, dataset_id: int, df: pd.DataFrame) -> int:
@@ -387,19 +391,20 @@ def _run_predictions_for_strategy(engine: Engine, dataset_id: int, parsed: Dict[
 
 # ---------- Routes ----------
 @router.get("")
-def list_datasets() -> Dict[str, Any]:
+def list_datasets(user=Depends(get_current_user)) -> Dict[str, Any]:
     """
     Return ONLY canonical DB datasets (plus file registry as 'source':'file').
     Frontend should use the 'id' from the DB rows for /datasets/{id}.
     """
     out: List[Dict[str, Any]] = []
-    # DB datasets
+    # DB datasets (only current user's)
     try:
         eng = _get_engine()
         _ensure_tables(eng)
         with eng.begin() as con:
             rows = con.execute(
-                text("SELECT id, name, n_rows, n_cols, created_at FROM datasets ORDER BY id DESC")
+                text("SELECT id, name, n_rows, n_cols, created_at, user_id FROM datasets WHERE user_id=:u ORDER BY id DESC"),
+                {"u": int(user["id"])}
             ).mappings().all()
             for r in rows:
                 item = dict(r)
@@ -408,9 +413,9 @@ def list_datasets() -> Dict[str, Any]:
     except Exception:
         pass
 
-    # file-registry references (secondary)
+    # file-registry references (secondary, restricted to current user)
     try:
-        files = registry.list()
+        files = registry.list(user_id=int(user["id"]))
         for f in files:
             f = dict(f)
             f["source"] = "file_registry"
@@ -423,7 +428,8 @@ def list_datasets() -> Dict[str, Any]:
 @router.post("/upload")
 async def upload_dataset(
     file: UploadFile = File(...),
-    name: Optional[str] = Form(None)
+    name: Optional[str] = Form(None),
+    user=Depends(get_current_user)
 ) -> Dict[str, Any]:
     ensure_data_dir()
     raw = await file.read()
@@ -461,7 +467,7 @@ async def upload_dataset(
     try:
         eng = _get_engine()
         _ensure_tables(eng)
-        dataset_id = _register_dataset(eng, safe_name, n_rows, n_cols)
+        dataset_id = _register_dataset(eng, safe_name, n_rows, n_cols, user_id=int(user["id"]))
         inserted = _insert_records(eng, dataset_id, df)
         if inserted == 0:
             raise HTTPException(status_code=500, detail="No rows were inserted into patient_records")
@@ -481,9 +487,9 @@ async def upload_dataset(
             }
         }
 
-    # also register in file registry (non-blocking)
+    # also register in file registry (non-blocking, per-user)
     try:
-        ds_file = registry.add_from_path(path, name=safe_name)
+        ds_file = registry.add(filename=safe_name, name=safe_name, n_rows=n_rows, n_cols=n_cols, dataset_id=str(dataset_id), user_id=int(user["id"]))
     except Exception:
         ds_file = {"id": None}
 
@@ -508,8 +514,17 @@ def _debug_list_db() -> Dict[str, Any]:
         rows = con.execute(text("SELECT id, name, n_rows, n_cols, created_at FROM datasets ORDER BY id DESC")).mappings().all()
     return {"db_datasets": [dict(r) for r in rows]}
 
+def _assert_dataset_owned(dataset_id: int, user_id: int):
+    eng = _get_engine()
+    with eng.begin() as con:
+        row = con.execute(text("SELECT user_id FROM datasets WHERE id=:d"), {"d": int(dataset_id)}).mappings().first()
+        if not row or int(row.get("user_id") or -1) != int(user_id):
+            raise HTTPException(status_code=403, detail="Not allowed")
+        return row
+
 @router.get("/{dataset_id}")
-def get_dataset(dataset_id: str) -> Dict[str, Any]:
+def get_dataset(dataset_id: int, user=Depends(get_current_user)) -> Dict[str, Any]:
+    _assert_dataset_owned(dataset_id, int(user["id"]))
     # DB first
     try:
         eng = _get_engine()
@@ -536,7 +551,8 @@ def get_dataset(dataset_id: str) -> Dict[str, Any]:
     raise HTTPException(status_code=404, detail="Dataset not found")
 
 @router.get("/{dataset_id}/columns")
-def dataset_columns(dataset_id: str) -> Dict[str, Any]:
+def dataset_columns(dataset_id: str, user=Depends(get_current_user)) -> Dict[str, Any]:
+    _assert_dataset_owned(int(dataset_id), int(user["id"]))
     # prefer DB schema
     try:
         eng = _get_engine()
@@ -554,7 +570,7 @@ def dataset_columns(dataset_id: str) -> Dict[str, Any]:
                     if isinstance(v, (dict, list, set)):
                         continue
                     cols.append({"name": k, "dtype": type(v).__name__})
-                return {"columns": cols, "rows": _count_rows(eng, dataset_id)}
+                return {"columns": cols, "rows": _count_rows(eng, int(dataset_id))}
     except Exception:
         pass
 
@@ -573,7 +589,8 @@ def _count_rows(engine: Engine, dataset_id: int) -> int:
     return int(n)
 
 @router.get("/{dataset_id}/summary")
-def dataset_summary(dataset_id: str) -> Dict[str, Any]:
+def dataset_summary(dataset_id: str, user=Depends(get_current_user)) -> Dict[str, Any]:
+    _assert_dataset_owned(int(dataset_id), int(user["id"]))
     df: Optional[pd.DataFrame] = None
     try:
         eng = _get_engine()
@@ -602,7 +619,8 @@ def dataset_summary(dataset_id: str) -> Dict[str, Any]:
     return {"meta": meta, "numeric": numeric, "categorical": categorical, "sample": sample}
 
 @router.get("/{dataset_id}/sample")
-def dataset_sample(dataset_id: str, limit: int = 50) -> Dict[str, Any]:
+def dataset_sample(dataset_id: str, limit: int = 50, user=Depends(get_current_user)) -> Dict[str, Any]:
+    _assert_dataset_owned(int(dataset_id), int(user["id"]))
     try:
         eng = _get_engine()
         _ensure_tables(eng)
@@ -630,8 +648,10 @@ def dataset_sample(dataset_id: str, limit: int = 50) -> Dict[str, Any]:
     df = load_dataframe(registry.path_for(dataset_id))
     df = _only_scalar_columns(df)
     return {"rows": head_sample(df, limit=limit)}
+
 @router.post("/{dataset_id}/backfill")
-def backfill_patient_records(dataset_id: str) -> Dict[str, Any]:
+def backfill_patient_records(dataset_id: str, user=Depends(get_current_user)) -> Dict[str, Any]:
+    _assert_dataset_owned(int(dataset_id), int(user["id"]))
     df = _load_registry_df(dataset_id)
     if df is None:
         raise HTTPException(status_code=404, detail="No source file found in registry to backfill from.")

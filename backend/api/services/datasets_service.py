@@ -14,7 +14,7 @@ class DatasetRegistry:
         os.makedirs(self.data_dir, exist_ok=True)
         if not os.path.exists(self.registry_path):
             with open(self.registry_path, "w", encoding="utf-8") as f:
-                json.dump({"datasets": {}}, f)
+                f.write("[]")
 
     def _load(self) -> Dict[str, Any]:
         with open(self.registry_path, "r", encoding="utf-8") as f:
@@ -24,9 +24,16 @@ class DatasetRegistry:
         with open(self.registry_path, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=2)
 
-    def list(self) -> List[Dict[str, Any]]:
-        data = self._load()
-        return list(data.get("datasets", {}).values())
+    def list(self, user_id: int | None = None) -> List[Dict[str, Any]]:
+        try:
+            with open(self.registry_path, "r", encoding="utf-8") as f:
+                arr = json.load(f)
+                arr = arr if isinstance(arr, list) else []
+                if user_id is not None:
+                    arr = [a for a in arr if int(a.get("user_id", -1)) == int(user_id)]
+                return arr
+        except Exception:
+            return []
 
     def get(self, dataset_id: str) -> Optional[Dict[str, Any]]:
         data = self._load()
@@ -66,6 +73,25 @@ class DatasetRegistry:
         data.setdefault("datasets", {})[dataset_id] = meta
         self._save(data)
         return meta
+
+    def add(self, filename: str, name: str, n_rows: int, n_cols: int, dataset_id: str, user_id: int | None = None) -> Dict[str, Any]:
+        rec = {
+            "id": str(dataset_id),
+            "filename": filename,
+            "name": name,
+            "n_rows": int(n_rows),
+            "n_cols": int(n_cols),
+            "user_id": int(user_id) if user_id is not None else None,
+            "created_at": datetime.datetime.utcnow().isoformat()
+        }
+        try:
+            arr = self.list()
+            arr.append(rec)
+            with open(self.registry_path, "w", encoding="utf-8") as f:
+                json.dump(arr, f, indent=2)
+        except Exception:
+            pass
+        return rec
 
 def ensure_data_dir():
     os.makedirs(DATA_DIR, exist_ok=True)

@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useRef } from 'react';
 import { BarChart3, Activity, AlertTriangle, Loader2, CheckCircle, AlertCircle, Navigation, ChevronDown } from 'lucide-react';
-import { api, fetchArtifact } from '../api';
+import { api, fetchArtifact, listDatasets, listCreatedStrategies } from '../api';
 import RiskHistogram from './RiskHistogram';
 import RegressorHistogram from './RegressorHistogram';
 import SummaryReadable from './SummaryReadable';
@@ -181,6 +181,17 @@ function HighRiskTable({ data, modelName, isOpen, onToggle }) {
 export default function AnalysisPage() {
   const [datasetId, setDatasetId] = useState('');
   const [strategyId, setStrategyId] = useState('');
+  const [datasets, setDatasets] = useState([]);
+  const [createdStrategies, setCreatedStrategies] = useState([]);
+
+  React.useEffect(() => { listDatasets().then(setDatasets).catch(console.error); }, []);
+  React.useEffect(() => {
+    if (datasetId) {
+      listCreatedStrategies(datasetId).then(setCreatedStrategies).catch(console.error);
+    } else {
+      setCreatedStrategies([]);
+    }
+  }, [datasetId]);
   const [running, setRunning] = useState(false);
   const [summary, setSummary] = useState(null);
   const [risk, setRisk] = useState(null);
@@ -275,22 +286,32 @@ export default function AnalysisPage() {
 
           <div className="grid md:grid-cols-4 gap-6 items-end">
             <div className="space-y-3">
-              <label className="block text-sm font-semibold text-gray-700">Dataset ID</label>
-              <input 
-                className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-violet-400 focus:ring-4 focus:ring-violet-100 transition-all duration-200 bg-white/80"
-                value={datasetId} 
+              <label className="block text-sm font-semibold text-gray-700">Dataset</label>
+              <select
+                className="w-full px-4 py-3 border-2 rounded-xl focus:outline-none focus:ring-4"
+                value={datasetId}
                 onChange={e => setDatasetId(e.target.value)}
-                placeholder="Enter dataset ID..."
-              />
+              >
+                <option value="">Select a dataset…</option>
+                {datasets.map(d => (
+                  <option key={`${d.source}:${d.id}`} value={d.id}>
+                    {(d.name || d.filename || `Dataset ${d.id}`)} {d.source ? `(${d.source})` : ''}
+                  </option>
+                ))}
+              </select>
             </div>
             <div className="space-y-3">
-              <label className="block text-sm font-semibold text-gray-700">Strategy ID (optional)</label>
-              <input 
-                className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-violet-400 focus:ring-4 focus:ring-violet-100 transition-all duration-200 bg-white/80"
-                value={strategyId} 
+              <label className="block text-sm font-semibold text-gray-700">Strategy (optional)</label>
+              <select
+                className="w-full px-4 py-3 border-2 rounded-xl focus:outline-none focus:ring-4"
+                value={strategyId}
                 onChange={e => setStrategyId(e.target.value)}
-                placeholder="Enter strategy ID..."
-              />
+              >
+                <option value="">No strategy (auto)</option>
+                {createdStrategies.map(s => (
+                  <option key={s.id} value={s.id}>{s.title || `Strategy ${s.id}`}</option>
+                ))}
+              </select>
             </div>
             <div className="md:col-span-2">
               <button 

@@ -7,7 +7,7 @@ from .api.endpoints.ai_analysis import router as analysis_router
 from .api.endpoints.patient_search import router as patient_router
 from .api.endpoints.report_generation import router as report_router
 from .api.endpoints.models import router as models_router
-
+from .api.routes.auth import router as auth_router
 app = FastAPI(title="Medical IntelliAnalytics Pro")
 
 app.add_middleware(
@@ -35,6 +35,7 @@ app.include_router(datasets_router)
 app.include_router(patients_router)
 app.include_router(analytics_router)
 app.include_router(strategies_router)
+app.include_router(auth_router, prefix="/auth", tags=["Auth"])
 
 app.include_router(upload_router)
 app.include_router(analysis_router)

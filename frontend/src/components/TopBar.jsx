@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Settings, Save, Check } from 'lucide-react';
 import { getApiBase, setApiBase } from '../api';
 
-export default function TopBar() {
+export default function TopBar({ setTab, authed, onLogout }) {
   const [base, setBase] = useState(getApiBase());
   const [saved, setSaved] = useState(false);
 
@@ -71,6 +71,31 @@ export default function TopBar() {
                 )}
               </button>
             </div>
+          </div>
+
+          {/* Auth Section */}
+          <div className="flex items-center gap-3">
+            {!authed ? (
+              <>
+                <button 
+                  className="px-4 py-2 text-white font-semibold hover:bg-white/10 rounded-xl transition-all duration-200"
+                  onClick={() => setTab && setTab('login')}
+                >
+                  Login
+                </button>
+                <button 
+                  className="px-4 py-2 bg-white text-purple-600 font-semibold rounded-xl hover:bg-purple-50 transition-all duration-200 shadow-md"
+                  onClick={() => setTab && setTab('signup')}
+                >
+                  Sign up
+                </button>
+              </>
+            ) : (
+              <>
++              <button className="text-gray-700 mr-4" onClick={() => setTab('profile')}>Profile</button>
++              <button className="text-rose-600" onClick={onLogout}>Logout</button>
++            </>
+            )}
           </div>
         </div>
       </div>

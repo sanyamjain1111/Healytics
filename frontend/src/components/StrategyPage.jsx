@@ -1,10 +1,10 @@
 import StrategyReadable from './StrategyReadable';
 import React, { useState, useRef } from 'react';
 import { Target, Brain, Settings, Loader2, CheckCircle, AlertCircle, Eye, EyeOff, ChevronDown, ChevronRight } from 'lucide-react';
-import { api } from '../api';
-
+import { api, listDatasets } from '../api';
 export default function StrategyPage() {
   const [datasetId, setDatasetId] = useState('');
+  const [datasets, setDatasets] = useState([]);
   const [objective, setObjective] = useState('Clinical risk, operations, and outcomes insights with explainability.');
   const [res, setRes] = useState(null);
   const [note, setNote] = useState('');
@@ -12,7 +12,9 @@ export default function StrategyPage() {
   const [showRawText, setShowRawText] = useState(false);
   const [activeSection, setActiveSection] = useState('overview');
   const sectionRefs = useRef({});
-
+  React.useEffect(() => {
+    listDatasets().then(setDatasets).catch(console.error);
+  }, []);
   async function generate() {
     setLoading(true);
     setNote('');
@@ -107,6 +109,22 @@ export default function StrategyPage() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-6 mb-6">
+            
+            <div className="space-y-3">
+              <label className="block text-sm font-semibold text-gray-700">Dataset</label>
+              <select
+                className="w-full px-4 py-3 border-2 rounded-xl focus:outline-none focus:ring-4"
+                value={datasetId}
+                onChange={e => setDatasetId(e.target.value)}
+              >
+                <option value="">Select a dataset…</option>
+                {datasets.map(d => (
+                  <option key={`${d.source}:${d.id}`} value={d.id}>
+                    {(d.name || d.filename || `Dataset ${d.id}`)} {d.source ? `(${d.source})` : ''}
+                  </option>
+                ))}
+              </select>
+            </div>
             <div className="space-y-3">
               <label className="block text-sm font-semibold text-gray-700">Dataset ID</label>
               <input 
@@ -114,15 +132,6 @@ export default function StrategyPage() {
                 value={datasetId} 
                 onChange={e => setDatasetId(e.target.value)}
                 placeholder="Enter dataset ID..."
-              />
-            </div>
-            <div className="space-y-3">
-              <label className="block text-sm font-semibold text-gray-700">Objective</label>
-              <input 
-                className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-violet-400 focus:ring-4 focus:ring-violet-100 transition-all duration-200 bg-white/80"
-                value={objective} 
-                onChange={e => setObjective(e.target.value)}
-                placeholder="Describe your objective..."
               />
             </div>
           </div>

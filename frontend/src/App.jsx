@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Database, Target, BarChart3, FileText, Search, Brain, Menu, X } from 'lucide-react';
+import { Database, Target, BarChart3, FileText, Search, Brain, Menu, X, User } from 'lucide-react';
 import TopBar from './components/TopBar';
 import DatasetPage from './components/DatasetPage';
 import StrategyPage from './components/StrategyPage';
@@ -7,6 +7,10 @@ import AnalysisPage from './components/AnalysisPage';
 import ReportsPage from './components/ReportsPage';
 import PatientSearchPage from './components/PatientSearchPage';
 import AdhocPage from './components/AdhocPage';
+import LoginPage from './components/LoginPage';
+import SignupPage from './components/SignupPage';
+import ProfilePage from './components/ProfilePage';
+import { me } from './api';
 
 const tabs = [
   { key: 'datasets', label: 'Datasets', icon: Database, color: 'from-blue-500 to-cyan-500' },
@@ -18,28 +22,105 @@ const tabs = [
 ];
 
 export default function App() {
-  const [active, setActive] = useState('datasets');
+  const [tab, setTab] = useState('strategy');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [auth, setAuth] = useState(!!localStorage.getItem('access_token'));
 
   useEffect(() => {
     const saved = localStorage.getItem('activeTab');
-    if (saved && tabs.some(t => t.key === saved)) setActive(saved);
+    if (saved && tabs.some(t => t.key === saved)) setTab(saved);
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('activeTab', active);
-  }, [active]);
+    localStorage.setItem('activeTab', tab);
+  }, [tab]);
+
+  useEffect(() => {
+    const onMsg = (e) => {
+      if (e?.data?.access_token) {
+        localStorage.setItem('access_token', e.data.access_token);
+        setAuth(true);
+        setTab('profile'); // nudge Google users to set password/name
+      }
+    };
+    window.addEventListener('message', onMsg);
+    return () => window.removeEventListener('message', onMsg);
+  }, []);
+
+  useEffect(() => {
+    // same-tab Google callback fallback: #access_token=...
+    const hash = window.location.hash || '';
+    const m = hash.match(/access_token=([^&]+)/);
+    if (m && m[1]) {
+      localStorage.setItem('access_token', decodeURIComponent(m[1]));
+      setAuth(true);
+      setTab('profile');
+      // clean hash
+      history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
+  }, []);
 
   const handleTabChange = (key) => {
-    setActive(key);
+    setTab(key);
     setMobileMenuOpen(false);
   };
 
-  const activeTab = tabs.find(t => t.key === active);
+  const handleLogout = () => {
+    localStorage.removeItem('access_token');
+    setAuth(false);
+    setTab('login');
+  };
 
+  const activeTab = tabs.find(t => t.key === tab);
+
+  // Auth flow: if not authenticated, show login/signup
+  if (!auth && tab !== 'login' && tab !== 'signup') {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-100">
+        <LoginPage 
+          onAuthed={() => setAuth(true)} 
+          switchToSignup={() => setTab('signup')} 
+        />
+      </div>
+    );
+  }
+
+  if (tab === 'login') {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-100">
+        <LoginPage 
+          onAuthed={() => setAuth(true)} 
+          switchToSignup={() => setTab('signup')} 
+        />
+      </div>
+    );
+  }
+
+  if (tab === 'signup') {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-100">
+        <SignupPage 
+          onAuthed={() => setAuth(true)} 
+          switchToLogin={() => setTab('login')} 
+        />
+      </div>
+    );
+  }
+
+  if (tab === 'profile') {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-100">
+        <TopBar setTab={setTab} authed={auth} onLogout={handleLogout} />
+        <div className="max-w-7xl mx-auto p-6">
+          <ProfilePage />
+        </div>
+      </div>
+    );
+  }
+  
   return (
     <div className="min-h-screen bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-100">
-      <TopBar />
+      <TopBar setTab={setTab} authed={auth} onLogout={handleLogout} />
       
       {/* Enhanced Navigation */}
       <div className="sticky top-0 z-20 bg-white/90 backdrop-blur-sm border-b border-purple-200 shadow-lg">
@@ -48,7 +129,7 @@ export default function App() {
           <div className="hidden lg:flex gap-3 flex-wrap">
             {tabs.map(t => {
               const Icon = t.icon;
-              const isActive = active === t.key;
+              const isActive = tab === t.key;
               
               return (
                 <button
@@ -94,7 +175,7 @@ export default function App() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {tabs.map(t => {
                   const Icon = t.icon;
-                  const isActive = active === t.key;
+                  const isActive = tab === t.key;
                   
                   return (
                     <button
@@ -120,12 +201,12 @@ export default function App() {
       {/* Main Content - Using your existing components */}
       <div className="max-w-7xl mx-auto px-4 py-6">
         <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl border border-white/50 p-6 hover:shadow-2xl transition-all duration-300">
-          {active === 'datasets' && <DatasetPage />}
-          {active === 'strategy' && <StrategyPage />}
-          {active === 'analysis' && <AnalysisPage />}
-          {active === 'reports' && <ReportsPage />}
-          {active === 'search' && <PatientSearchPage />}
-          {active === 'adhoc' && <AdhocPage />}
+          {tab === 'datasets' && <DatasetPage />}
+          {tab === 'strategy' && <StrategyPage />}
+          {tab === 'analysis' && <AnalysisPage />}
+          {tab === 'reports' && <ReportsPage />}
+          {tab === 'search' && <PatientSearchPage />}
+          {tab === 'adhoc' && <AdhocPage />}
         </div>
       </div>
     </div>
