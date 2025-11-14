@@ -14,8 +14,8 @@ export default function DatasetPage() {
     const client = api();
 
     try {
-      console.log('Attempting to fetch from /datasets');
-      const res = await client.get('/datasets');
+      console.log('Attempting to fetch from /datasets with Authorization:', !!localStorage.getItem('access_token'));
+      const res = await client.get('/datasets');  // axios adds Bearer
       console.log('Response from /datasets:', res.data);
       setList(dedupe(res.data?.datasets || res.data || []));
       setLoading(false);
@@ -81,10 +81,7 @@ export default function DatasetPage() {
       console.log('FormData created, making request to /datasets/upload');
       
       const client = api();
-      // Let axios set proper multipart boundaries; interceptor will attach Authorization
-      const response = await client.post('/datasets/upload', form, {
-        headers: { /* content-type omitted intentionally */ }
-      });
+      const response = await client.post('/datasets/upload', form); 
       const result = response.data || response;
       
       console.log('Upload response:', result);

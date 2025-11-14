@@ -408,20 +408,11 @@ def list_datasets(user=Depends(get_current_user)) -> Dict[str, Any]:
             ).mappings().all()
             for r in rows:
                 item = dict(r)
-                item["source"] = "db"
+                item["source"] = f"Dataset ID : {item['id']}"
                 out.append(item)
     except Exception:
         pass
 
-    # file-registry references (secondary, restricted to current user)
-    try:
-        files = registry.list(user_id=int(user["id"]))
-        for f in files:
-            f = dict(f)
-            f["source"] = "file_registry"
-            out.append(f)
-    except Exception:
-        pass
 
     return {"datasets": out}
 

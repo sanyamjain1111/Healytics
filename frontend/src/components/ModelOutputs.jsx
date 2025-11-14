@@ -40,7 +40,7 @@ export default function ModelOutputs({ result }) {
                       <div className="text-sm text-gray-600">Risk Classification</div>
                     </div>
                     
-                    <div className="flex flex-col items-end gap-2">
+                    <div className="flex flex-col items-end gap-2 relative z-10">
                       <span className={`px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1 ${
                         isHighRisk 
                           ? 'bg-red-100 text-red-800 border border-red-200' 

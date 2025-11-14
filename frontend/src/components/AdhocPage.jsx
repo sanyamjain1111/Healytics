@@ -16,11 +16,10 @@ export default function AdhocPage() {
   const [showInputs, setShowInputs] = useState(true);
   const [loading, setLoading] = useState(false);
   React.useEffect(() => {
-    // Adhoc uses DB datasets
-    listDatasets()
-      .then(ds => setDatasets((ds || []).filter(d => d.source === 'db')))
-      .catch(console.error);
-  }, []);
+  listDatasets()
+    .then(ds => setDatasets(ds || []))
+    .catch(console.error);
+}, []);
   React.useEffect(() => {
     if (datasetId) {
       listCreatedStrategies(datasetId).then(setCreatedStrategies).catch(console.error);

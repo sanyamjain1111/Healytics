@@ -75,6 +75,8 @@ export default function TopBar({ setTab, authed, onLogout }) {
 
           {/* Auth Section */}
           <div className="flex items-center gap-3">
+         {authed ? <span className="text-xs px-2 py-1 bg-emerald-50 text-emerald-700 rounded">Authed</span> : <span className="text-xs px-2 py-1 bg-rose-50 text-rose-700 rounded">Guest</span>}
+
             {!authed ? (
               <>
                 <button 
@@ -92,9 +94,9 @@ export default function TopBar({ setTab, authed, onLogout }) {
               </>
             ) : (
               <>
-+              <button className="text-gray-700 mr-4" onClick={() => setTab('profile')}>Profile</button>
-+              <button className="text-rose-600" onClick={onLogout}>Logout</button>
-+            </>
+              <button className="text-gray-700 mr-4" onClick={() => setTab('profile')}>Profile</button>
+              <button className="text-rose-600" onClick={onLogout}>Logout</button>
+            </>
             )}
           </div>
         </div>

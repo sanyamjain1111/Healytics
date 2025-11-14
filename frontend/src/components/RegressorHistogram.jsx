@@ -101,10 +101,12 @@ export default function RegressorHistogram({ values=[], title }) {
                 dataKey="x" 
                 tickFormatter={(v)=>v.toFixed(1)}
                 tick={{ fontSize: 12 }}
+                label={{ value: 'Predicted Value', position: 'insideBottom', offset: -5, style: { fontSize: 14, fontWeight: 600, fill: '#374151' } }}
               />
               <YAxis 
                 allowDecimals={false}
                 tick={{ fontSize: 12 }}
+                label={{ value: 'Number of Patients', angle: -90, position: 'insideLeft', style: { fontSize: 14, fontWeight: 600, fill: '#374151' } }}
               />
               <Tooltip 
                 formatter={(v, n, p)=>[v, `bin≈${p.payload.x.toFixed(1)}`]}

@@ -14,8 +14,25 @@ const CLASSIFIERS = new Set([
 ]);
 const REGRESSORS = new Set(["LengthOfStayRegressor","CostOfCareRegressor","AnemiaSeverityRegressor"]);
 
-function NavigationBar({ modelNames, onNavigate }) {
+function LeftNavigationBar({ modelNames, onNavigate, summaryOpen, onSummaryToggle, summary }) {
   if (modelNames.length === 0) return null;
+
+  const [summarySubNavOpen, setSummarySubNavOpen] = useState(false);
+
+  const risk = summary?.risk || {};
+  const anomaly = summary?.anomaly || {};
+  const counts = risk.counts || {};
+
+  const classifiers = [];
+  const regressors = [];
+
+  Object.entries(counts).forEach(([modelName, data]) => {
+    if (data.positives !== undefined && data.total !== undefined) {
+      classifiers.push(modelName);
+    } else if (data.n !== undefined && data.mean_prediction !== undefined) {
+      regressors.push(modelName);
+    }
+  });
 
   const handleScrollTo = (modelName) => {
     const element = document.getElementById(`model-${modelName}`);
@@ -32,6 +49,13 @@ function NavigationBar({ modelNames, onNavigate }) {
     }
   };
 
+  const handleScrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   const handleScrollToAnomalies = () => {
     const element = document.getElementById('anomalies-section');
     if (element) {
@@ -40,40 +64,101 @@ function NavigationBar({ modelNames, onNavigate }) {
   };
 
   return (
-    <div className="sticky top-0 z-10 bg-white/90 backdrop-blur-sm border-b border-purple-200 shadow-lg">
-      <div className="px-6 py-4">
-        <div className="flex items-center gap-2 mb-3">
-          <Navigation className="w-4 h-4 text-violet-600" />
-          <div className="text-sm font-semibold text-gray-700">Navigate to:</div>
+    <div className="h-full bg-white/95 backdrop-blur-sm border-r border-purple-200 overflow-y-auto">
+      <div className="p-5">
+        <div className="flex items-center gap-2 mb-6 pb-4 border-b-2 border-purple-300">
+          <Navigation className="w-5 h-5 text-violet-600" />
+          <div className="text-base font-bold text-gray-800">Navigate to:</div>
         </div>
-        <div className="flex flex-wrap gap-2 max-h-32 overflow-y-auto">
-          <button
-            onClick={handleScrollToSummary}
-            className="flex items-center gap-2 px-4 py-2 text-sm bg-gradient-to-r from-blue-100 to-cyan-100 text-blue-800 rounded-xl hover:from-blue-200 hover:to-cyan-200 transition-all duration-200 font-medium border border-blue-200 shadow-sm hover:shadow-md"
-          >
-            <BarChart3 className="w-4 h-4" />
-            Summary
-          </button>
+        <div className="space-y-2">
+          {/* Summary with Sub-Navigation */}
+          <div className="space-y-1">
+            <div className="flex items-center gap-1">
+              <button
+                onClick={handleScrollToSummary}
+                className="flex-1 flex items-center gap-2 px-3 py-3 text-sm bg-gradient-to-r from-blue-100 to-cyan-100 text-blue-800 rounded-xl hover:from-blue-200 hover:to-cyan-200 transition-all duration-200 font-medium border border-blue-200 shadow-sm hover:shadow-md"
+              >
+                <BarChart3 className="w-4 h-4 flex-shrink-0" />
+                <span className="truncate">Summary</span>
+              </button>
+              <button
+                onClick={() => setSummarySubNavOpen(!summarySubNavOpen)}
+                className="p-3 bg-gradient-to-r from-blue-100 to-cyan-100 text-blue-800 rounded-xl hover:from-blue-200 hover:to-cyan-200 transition-all duration-200 border border-blue-200 shadow-sm hover:shadow-md"
+              >
+                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${summarySubNavOpen ? 'rotate-180' : ''}`} />
+              </button>
+            </div>
+            
+            {summarySubNavOpen && (
+              <div className="ml-4 pl-3 border-l-2 border-blue-300 space-y-1 py-2">
+                <button
+                  onClick={() => handleScrollToSection('overview-section')}
+                  className="w-full flex items-center gap-2 px-3 py-2 text-xs bg-blue-50 text-blue-700 rounded-lg hover:bg-blue-100 transition-all duration-200 font-medium"
+                >
+                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                  <span className="truncate">Overview</span>
+                </button>
+                <button
+                  onClick={() => handleScrollToSection('models-section')}
+                  className="w-full flex items-center gap-2 px-3 py-2 text-xs bg-blue-50 text-blue-700 rounded-lg hover:bg-blue-100 transition-all duration-200 font-medium"
+                >
+                  <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                  <span className="truncate">Models</span>
+                </button>
+                {classifiers.length > 0 && (
+                  <button
+                    onClick={() => handleScrollToSection('classification-section')}
+                    className="w-full flex items-center gap-2 px-3 py-2 text-xs bg-blue-50 text-blue-700 rounded-lg hover:bg-blue-100 transition-all duration-200 font-medium"
+                  >
+                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                    <span className="truncate">Classification</span>
+                  </button>
+                )}
+                {regressors.length > 0 && (
+                  <button
+                    onClick={() => handleScrollToSection('regression-section')}
+                    className="w-full flex items-center gap-2 px-3 py-2 text-xs bg-blue-50 text-blue-700 rounded-lg hover:bg-blue-100 transition-all duration-200 font-medium"
+                  >
+                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                    <span className="truncate">Regression</span>
+                  </button>
+                )}
+                {anomaly.n_anomalies !== undefined && (
+                  <button
+                    onClick={() => handleScrollToSection('anomaly-section')}
+                    className="w-full flex items-center gap-2 px-3 py-2 text-xs bg-blue-50 text-blue-700 rounded-lg hover:bg-blue-100 transition-all duration-200 font-medium"
+                  >
+                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
+                    <span className="truncate">Anomalies Detection</span>
+                  </button>
+                )}
+              </div>
+            )}
+          </div>
+          
+          {/* Model Results */}
           {modelNames.map(modelName => (
             <button
               key={modelName}
               onClick={() => handleScrollTo(modelName)}
-              className={`flex items-center gap-2 px-4 py-2 text-sm rounded-xl transition-all duration-200 font-medium border shadow-sm hover:shadow-md ${
+              className={`w-full flex items-center gap-2 px-3 py-3 text-sm rounded-xl transition-all duration-200 font-medium border shadow-sm hover:shadow-md ${
                 CLASSIFIERS.has(modelName)
                   ? 'bg-gradient-to-r from-violet-100 to-purple-100 text-violet-800 hover:from-violet-200 hover:to-purple-200 border-violet-200'
                   : 'bg-gradient-to-r from-emerald-100 to-teal-100 text-emerald-800 hover:from-emerald-200 hover:to-teal-200 border-emerald-200'
               }`}
             >
-              {CLASSIFIERS.has(modelName) ? <Activity className="w-4 h-4" /> : <BarChart3 className="w-4 h-4" />}
-              {modelName}
+              {CLASSIFIERS.has(modelName) ? <Activity className="w-4 h-4 flex-shrink-0" /> : <BarChart3 className="w-4 h-4 flex-shrink-0" />}
+              <span className="truncate text-left">{modelName}</span>
             </button>
           ))}
+          
+          {/* Anomalies Section */}
           <button
             onClick={handleScrollToAnomalies}
-            className="flex items-center gap-2 px-4 py-2 text-sm bg-gradient-to-r from-orange-100 to-red-100 text-orange-800 rounded-xl hover:from-orange-200 hover:to-red-200 transition-all duration-200 font-medium border border-orange-200 shadow-sm hover:shadow-md"
+            className="w-full flex items-center gap-2 px-3 py-3 text-sm bg-gradient-to-r from-orange-100 to-red-100 text-orange-800 rounded-xl hover:from-orange-200 hover:to-red-200 transition-all duration-200 font-medium border border-orange-200 shadow-sm hover:shadow-md"
           >
-            <AlertTriangle className="w-4 h-4" />
-            Anomalies
+            <AlertTriangle className="w-4 h-4 flex-shrink-0" />
+            <span className="truncate">Anomalies</span>
           </button>
         </div>
       </div>
@@ -95,8 +180,6 @@ function HighRiskTable({ data, modelName, isOpen, onToggle }) {
     return false;
   }).sort((a, b) => (b.score || 0) - (a.score || 0)).slice(0, 20);
   
-  console.log(`${modelName}: isOpen=${isOpen}, highRiskPatients=${highRiskPatients.length}`);
-  
   if (highRiskPatients.length === 0) {
     return (
       <div className="mt-6 p-4 bg-gradient-to-r from-green-50 to-emerald-50 border border-green-200 rounded-xl">
@@ -110,7 +193,6 @@ function HighRiskTable({ data, modelName, isOpen, onToggle }) {
       <button 
         onClick={(e) => {
           e.preventDefault();
-          console.log(`Clicking toggle for ${modelName}, current state: ${isOpen}`);
           onToggle();
         }}
         className="group flex items-center gap-3 text-lg font-semibold text-gray-800 hover:text-violet-700 transition-colors mb-4 cursor-pointer bg-gradient-to-r from-white to-gray-50 p-3 rounded-xl border border-gray-200 hover:border-violet-300 w-full"
@@ -192,6 +274,7 @@ export default function AnalysisPage() {
       setCreatedStrategies([]);
     }
   }, [datasetId]);
+  
   const [running, setRunning] = useState(false);
   const [summary, setSummary] = useState(null);
   const [risk, setRisk] = useState(null);
@@ -199,26 +282,26 @@ export default function AnalysisPage() {
   const [err, setErr] = useState('');
   const [openTables, setOpenTables] = useState({});
   const [activeModel, setActiveModel] = useState(null);
+  const [summaryOpen, setSummaryOpen] = useState(true);
+  const [graphsVisible, setGraphsVisible] = useState(true);
 
   const toggleTable = (modelName) => {
-    console.log(`toggleTable called for ${modelName}`);
-    console.log('Current openTables:', openTables);
-    
-    setOpenTables(prev => {
-      const newState = {
-        ...prev,
-        [modelName]: !prev[modelName]
-      };
-      console.log('New openTables state:', newState);
-      return newState;
-    });
+    setOpenTables(prev => ({
+      ...prev,
+      [modelName]: !prev[modelName]
+    }));
   };
 
   async function run() {
     setErr('');
     setRunning(true);
-    setSummary(null); setRisk(null); setAnom(null);
+    setSummary(null); 
+    setRisk(null); 
+    setAnom(null);
     setOpenTables({});
+    setSummaryOpen(true);
+    setGraphsVisible(true);
+    
     try {
       const client = api();
       const payload = { dataset_id: Number(datasetId) };
@@ -257,26 +340,26 @@ export default function AnalysisPage() {
     return out;
   }, [risk]);
 
-  const isError = err.includes('failed') || err.includes('Failed');
+  const hasResults = summary || risk;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-100 p-6">
+    <div className="min-h-screen bg-gradient-to-br from-violet-50 via-purple-50 to-indigo-100 p-4">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-12">
-          <div className="flex justify-center items-center gap-3 mb-4">
-            <div className="p-3 bg-gradient-to-r from-violet-600 to-indigo-600 rounded-2xl shadow-lg">
-              <Activity className="w-8 h-8 text-white" />
+        <div className="text-center mb-6">
+          <div className="flex justify-center items-center gap-2 mb-2">
+            <div className="p-2 bg-gradient-to-r from-violet-600 to-indigo-600 rounded-xl shadow-lg">
+              <Activity className="w-6 h-6 text-white" />
             </div>
-            <h1 className="text-4xl font-bold bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent">
+            <h1 className="text-3xl font-bold bg-gradient-to-r from-violet-600 to-indigo-600 bg-clip-text text-transparent">
               Analytics Engine
             </h1>
           </div>
-          <p className="text-gray-600 text-lg">Run comprehensive ML analysis on your datasets</p>
+          <p className="text-gray-600 text-base">Run comprehensive ML analysis on your datasets</p>
         </div>
 
         {/* Input Section */}
-        <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl border border-white/50 p-8 mb-8 hover:shadow-2xl transition-all duration-300">
+        <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl border border-white/50 p-6 mb-6 hover:shadow-2xl transition-all duration-300">
           <div className="flex items-center gap-3 mb-6">
             <div className="p-2 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-xl">
               <BarChart3 className="w-6 h-6 text-white" />
@@ -346,86 +429,104 @@ export default function AnalysisPage() {
           )}
         </div>
 
-        {(summary || risk) && (
-          <NavigationBar 
-            modelNames={Object.keys(modelLists)} 
-            onNavigate={setActiveModel}
-          />
-        )}
+        {/* Results Section - Two Column Layout */}
+        {hasResults && (
+          <div className="flex gap-6" style={{ height: 'calc(120vh - 400px)' }}>
+            {/* Left Navigation Panel */}
+            <div className="w-80 flex-shrink-0 rounded-3xl shadow-xl overflow-hidden">
+              <LeftNavigationBar 
+                modelNames={Object.keys(modelLists)} 
+                onNavigate={setActiveModel}
+                summaryOpen={summaryOpen}
+                onSummaryToggle={() => setSummaryOpen(!summaryOpen)}
+                summary={summary}
+              />
+            </div>
 
-        {summary && (
-          <div id="summary-section" className="mb-8">
-            <SummaryReadable summary={summary} />
-          </div>
-        )}
+            {/* Right Content Panel - Scrollable */}
+            <div className="flex-1 overflow-y-auto rounded-3xl">
+              <div className="space-y-8">
+                {summary && (
+                  <div id="summary-section">
+                    <SummaryReadable 
+                      summary={summary} 
+                      isOpen={summaryOpen}
+                      onToggle={() => setSummaryOpen(!summaryOpen)}
+                      onGraphsToggle={() => setGraphsVisible(!graphsVisible)}
+                      graphsVisible={graphsVisible}
+                    />
+                  </div>
+                )}
 
-        {risk && (
-          <div className="space-y-8 mb-8">
-            <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl border border-white/50 p-8 hover:shadow-2xl transition-all duration-300">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-2 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-xl">
-                  <BarChart3 className="w-6 h-6 text-white" />
-                </div>
-                <h2 className="text-2xl font-bold text-gray-800">Model Results</h2>
-              </div>
-              
-              <div className="space-y-10">
-                {Object.keys(modelLists).map(m => {
-                  const rows = modelLists[m];
-                  if (CLASSIFIERS.has(m)) {
-                    const scores = rows.map(r => r.score).filter(x => typeof x === 'number');
-                    const thr = rows.find(r => r.threshold != null)?.threshold ?? null;
-                    return (
-                      <div key={m} id={`model-${m}`} className="scroll-mt-20 bg-gradient-to-br from-white to-violet-50 border border-violet-200 rounded-2xl p-6 hover:shadow-lg transition-all duration-200">
-                        <div className="flex items-center gap-3 mb-4">
-                          <div className="p-2 bg-gradient-to-r from-violet-500 to-purple-500 rounded-xl">
-                            <Activity className="w-5 h-5 text-white" />
-                          </div>
-                          <h3 className="text-xl font-bold text-gray-800">{m}</h3>
-                          <span className="text-sm bg-violet-100 text-violet-700 px-3 py-1 rounded-full font-semibold">classifier</span>
-                        </div>
-                        <RiskHistogram scores={scores} threshold={thr} title={`${m} — Score Distribution`} />
-                        <HighRiskTable 
-                          data={rows} 
-                          modelName={m}
-                          isOpen={openTables[m] || false}
-                          onToggle={() => toggleTable(m)}
-                        />
+                {risk && graphsVisible && (
+                  <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl border border-white/50 p-8 hover:shadow-2xl transition-all duration-300">
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="p-2 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-xl">
+                        <BarChart3 className="w-6 h-6 text-white" />
                       </div>
-                    );
-                  } else if (REGRESSORS.has(m)) {
-                    const vals = rows.map(r => r.prediction).filter(x => typeof x === 'number');
-                    return (
-                      <div key={m} id={`model-${m}`} className="scroll-mt-20 bg-gradient-to-br from-white to-emerald-50 border border-emerald-200 rounded-2xl p-6 hover:shadow-lg transition-all duration-200">
-                        <div className="flex items-center gap-3 mb-4">
-                          <div className="p-2 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-xl">
-                            <BarChart3 className="w-5 h-5 text-white" />
-                          </div>
-                          <h3 className="text-xl font-bold text-gray-800">{m}</h3>
-                          <span className="text-sm bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full font-semibold">regression</span>
-                        </div>
-                        <RegressorHistogram values={vals} title={`${m} — Prediction Distribution`} />
+                      <h2 className="text-2xl font-bold text-gray-800">Model Results</h2>
+                    </div>
+                    
+                    <div className="space-y-10">
+                      {Object.keys(modelLists).map(m => {
+                        const rows = modelLists[m];
+                        if (CLASSIFIERS.has(m)) {
+                          const scores = rows.map(r => r.score).filter(x => typeof x === 'number');
+                          const thr = rows.find(r => r.threshold != null)?.threshold ?? null;
+                          return (
+                            <div key={m} id={`model-${m}`} className="scroll-mt-20 bg-gradient-to-br from-white to-violet-50 border border-violet-200 rounded-2xl p-6 hover:shadow-lg transition-all duration-200">
+                              <div className="flex items-center gap-3 mb-4">
+                                <div className="p-2 bg-gradient-to-r from-violet-500 to-purple-500 rounded-xl">
+                                  <Activity className="w-5 h-5 text-white" />
+                                </div>
+                                <h3 className="text-xl font-bold text-gray-800">{m}</h3>
+                                <span className="text-sm bg-violet-100 text-violet-700 px-3 py-1 rounded-full font-semibold">classifier</span>
+                              </div>
+                              <RiskHistogram scores={scores} threshold={thr} title={`${m} — Score Distribution`} />
+                              <HighRiskTable 
+                                data={rows} 
+                                modelName={m}
+                                isOpen={openTables[m] || false}
+                                onToggle={() => toggleTable(m)}
+                              />
+                            </div>
+                          );
+                        } else if (REGRESSORS.has(m)) {
+                          const vals = rows.map(r => r.prediction).filter(x => typeof x === 'number');
+                          return (
+                            <div key={m} id={`model-${m}`} className="scroll-mt-20 bg-gradient-to-br from-white to-emerald-50 border border-emerald-200 rounded-2xl p-6 hover:shadow-lg transition-all duration-200">
+                              <div className="flex items-center gap-3 mb-4">
+                                <div className="p-2 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-xl">
+                                  <BarChart3 className="w-5 h-5 text-white" />
+                                </div>
+                                <h3 className="text-xl font-bold text-gray-800">{m}</h3>
+                                <span className="text-sm bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full font-semibold">regression</span>
+                              </div>
+                              <RegressorHistogram values={vals} title={`${m} — Prediction Distribution`} />
+                            </div>
+                          );
+                        }
+                        return null;
+                      })}
+                    </div>
+                  </div>
+                )}
+
+                {anom && (
+                  <div id="anomalies-section" className="scroll-mt-20 bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl border border-white/50 p-8 hover:shadow-2xl transition-all duration-300">
+                    <div className="flex items-center gap-3 mb-6">
+                      <div className="p-2 bg-gradient-to-r from-orange-500 to-red-500 rounded-xl">
+                        <AlertTriangle className="w-6 h-6 text-white" />
                       </div>
-                    );
-                  }
-                  return null;
-                })}
+                      <h2 className="text-2xl font-bold text-gray-800">Anomalies</h2>
+                    </div>
+                    <pre className="text-sm bg-gradient-to-r from-gray-50 to-orange-50 border border-gray-200 rounded-2xl p-4 overflow-auto font-mono">
+                      {JSON.stringify(anom.summary || anom, null, 2)}
+                    </pre>
+                  </div>
+                )}
               </div>
             </div>
-          </div>
-        )}
-
-        {anom && (
-          <div id="anomalies-section" className="scroll-mt-20 bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl border border-white/50 p-8 hover:shadow-2xl transition-all duration-300">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="p-2 bg-gradient-to-r from-orange-500 to-red-500 rounded-xl">
-                <AlertTriangle className="w-6 h-6 text-white" />
-              </div>
-              <h2 className="text-2xl font-bold text-gray-800">Anomalies</h2>
-            </div>
-            <pre className="text-sm bg-gradient-to-r from-gray-50 to-orange-50 border border-gray-200 rounded-2xl p-4 overflow-auto font-mono">
-              {JSON.stringify(anom.summary || anom, null, 2)}
-            </pre>
           </div>
         )}
       </div>

@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { FileText, BarChart3, Loader2, AlertCircle, CheckCircle } from 'lucide-react';
 import { api } from '../api';
 import { listDatasets } from '../api';
+import ReportDownloader from './ReportDownload';
 export default function ReportsPage() {
   const [datasetId, setDatasetId] = useState('');
   const [datasets, setDatasets] = useState([]);
@@ -111,16 +112,24 @@ export default function ReportsPage() {
 
         {/* Report Results */}
         {res && (
-          <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl border border-white/50 p-8 hover:shadow-2xl transition-all duration-300">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="p-2 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl">
-                <CheckCircle className="w-6 h-6 text-white" />
-              </div>
-              <h2 className="text-2xl font-bold text-gray-800">Generated Report</h2>
-            </div>
-            <ReportReadable report={res} />
-          </div>
-        )}
+  <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl border border-white/50 p-8 hover:shadow-2xl transition-all duration-300">
+    <div className="flex items-center gap-3 mb-6">
+      <div className="p-2 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl">
+        <CheckCircle className="w-6 h-6 text-white" />
+      </div>
+      <h2 className="text-2xl font-bold text-gray-800">Generated Report</h2>
+    </div>
+    <div className="mb-6">
+      <ReportDownloader 
+        report={res} 
+        datasetName={datasets.find(d => d.id === Number(datasetId))?.name || 
+                     datasets.find(d => d.id === Number(datasetId))?.filename ||
+                     `Dataset ${datasetId}`}
+      />
+    </div>
+    <ReportReadable report={res} />
+  </div>
+)}
       </div>
     </div>
   );

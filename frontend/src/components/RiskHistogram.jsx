@@ -74,10 +74,12 @@ export default function RiskHistogram({ scores=[], threshold=null, title }) {
                 dataKey="bin" 
                 tickFormatter={(v)=>v.toFixed(2)}
                 tick={{ fontSize: 12 }}
+                label={{ value: 'Risk Score', position: 'insideBottom', offset: -10, style: { fontSize: 14, fontWeight: 600, fill: '#374151' } }}
               />
               <YAxis 
                 allowDecimals={false}
                 tick={{ fontSize: 12 }}
+                label={{ value: 'Number of Patients', angle: -90, position: 'insideLeft', style: { fontSize: 14, fontWeight: 600, fill: '#374151' } }}
               />
               <Tooltip 
                 formatter={(v, n, p)=>[v, `bin=${p.payload.bin.toFixed(2)}`]}
