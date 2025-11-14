@@ -68,6 +68,7 @@ def _get_engine() -> Engine:
 DDL = """
 CREATE TABLE IF NOT EXISTS strategies (
   id SERIAL PRIMARY KEY,
+  user_id INT,
   dataset_id VARCHAR(255) NOT NULL,
   title TEXT,
   raw_text TEXT,

@@ -84,6 +84,7 @@ def _get_engine() -> Engine:
 DDL = """
 CREATE TABLE IF NOT EXISTS datasets (
   id SERIAL PRIMARY KEY,
+  user_id INT,
   name TEXT NOT NULL,
   n_rows INT,
   n_cols INT,
