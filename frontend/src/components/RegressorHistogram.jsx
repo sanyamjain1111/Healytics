@@ -4,7 +4,7 @@ import { BarChart3, TrendingUp } from 'lucide-react';
 
 export default function RegressorHistogram({ values=[], title }) {
   if (!values || values.length === 0) return null;
-  
+    console.log('Rendering RegressorHistogram with values:', title);
   const min = Math.min(...values);
   const max = Math.max(...values);
   const nBins = 20;
@@ -101,7 +101,15 @@ export default function RegressorHistogram({ values=[], title }) {
                 dataKey="x" 
                 tickFormatter={(v)=>v.toFixed(1)}
                 tick={{ fontSize: 12 }}
-                label={{ value: 'Predicted Value', position: 'insideBottom', offset: -5, style: { fontSize: 14, fontWeight: 600, fill: '#374151' } }}
+                label={{ 
+                  value: title === "LengthOfStayRegressor — Prediction Distribution" ? 'Predicted Length of Stay (days)' :
+                         title === "CostOfCareRegressor — Prediction Distribution" ? 'Predicted Cost of Care (₹)' :
+                         title === "AnemiaSeverityRegressor — Prediction Distribution" ? 'Predicted Anemia Severity (g/dL hemoglobin)' :
+                         'Predicted Value',
+                  position: 'insideBottom', 
+                  offset: -5, 
+                  style: { fontSize: 14, fontWeight: 600, fill: '#374151' } 
+                }}
               />
               <YAxis 
                 allowDecimals={false}

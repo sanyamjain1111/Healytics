@@ -74,7 +74,7 @@ export default function RiskHistogram({ scores=[], threshold=null, title }) {
                 dataKey="bin" 
                 tickFormatter={(v)=>v.toFixed(2)}
                 tick={{ fontSize: 12 }}
-                label={{ value: 'Risk Score', position: 'insideBottom', offset: -10, style: { fontSize: 14, fontWeight: 600, fill: '#374151' } }}
+                label={{ value: 'Risk Score', position: 'insideBottom', offset: -7, style: { fontSize: 14, fontWeight: 600, fill: '#374151' } }}
               />
               <YAxis 
                 allowDecimals={false}
