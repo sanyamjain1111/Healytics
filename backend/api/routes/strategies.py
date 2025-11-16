@@ -69,7 +69,7 @@ DDL = """
 CREATE TABLE IF NOT EXISTS strategies (
   id SERIAL PRIMARY KEY,
   user_id INT,
-  dataset_id VARCHAR(255) NOT NULL,
+  dataset_id INT,
   title TEXT,
   raw_text TEXT,
   parsed JSONB,
